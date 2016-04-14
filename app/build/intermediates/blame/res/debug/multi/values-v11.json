@@ -1,0 +1,98 @@
+[
+    {
+        "outputFile": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\values-v11\\values-v11.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 62,
+                    "endOffset": 113
+                },
+                "from": {
+                    "file": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\src\\main\\res\\values-v11\\styles.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 17,
+                        "endColumn": 63,
+                        "endOffset": 76
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "P:\\Boggle Project\\FrameworkBoggle-master\\app\\build\\intermediates\\res\\merged\\debug\\values-v11\\values-v11.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 62,
+                    "endOffset": 113
+                },
+                "from": {
+                    "file": "P:\\Boggle Project\\FrameworkBoggle-master\\app\\src\\main\\res\\values-v11\\styles.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 17,
+                        "endColumn": 63,
+                        "endOffset": 76
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\values-v11\\values-v11.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 62,
+                    "endOffset": 113
+                },
+                "from": {
+                    "file": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\src\\main\\res\\values-v11\\styles.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 17,
+                        "endColumn": 63,
+                        "endOffset": 76
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\FrameworkBoggle5\\app\\build\\intermediates\\res\\merged\\debug\\values-v11\\values-v11.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 62,
+                    "endOffset": 113
+                },
+                "from": {
+                    "file": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\FrameworkBoggle5\\app\\src\\main\\res\\values-v11\\styles.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 19,
+                        "endColumn": 63,
+                        "endOffset": 78
+                    }
+                }
+            }
+        ]
+    }
+]
