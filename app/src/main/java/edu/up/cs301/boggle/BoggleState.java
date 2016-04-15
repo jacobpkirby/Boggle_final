@@ -32,7 +32,7 @@ public class BoggleState extends GameState {
     private int player1Score; //tracks the score of player1
     private int player2Score; //tracks the score of player2
 
-    private String currentWord; //the current word the player is making
+    private String[] currentWord = new String[2]; //the current word the player is making
     private boolean timer; //true if the timer is running, false if timer has stopped
 
     private ArrayList<String> wordBank; //the current words in the word bank
@@ -77,7 +77,10 @@ public class BoggleState extends GameState {
         playerTurn = 0;
         player1Score = 0;
         player2Score = 0;
-        currentWord = "";
+        for(int i = 0; i < 2; i++){
+            currentWord[i] = "";
+        }
+
         timer = true;
         curLetter = "a";
         curLetterRow = 4;
@@ -222,6 +225,10 @@ public class BoggleState extends GameState {
         for(int i = 0; i < this.compUsedWords.size(); i++){
           state.compUsedWords.add(this.compUsedWords.get(i));
         }
+        this.currentWord = new String[2];
+        for(int i = 0; i < 2;i ++){
+            this.currentWord[i]= state.currentWord[i];
+        }
     }
 
     //--------------------------- Getter/Setter End -----------------------------
@@ -252,8 +259,8 @@ public class BoggleState extends GameState {
     public void setPlayer1Score(int player1Score) {this.player1Score = player1Score;}
     public int getPlayer2Score() {return player2Score;}
     public void setPlayer2Score(int player2Score) {this.player2Score = player2Score;}
-    public String getCurrentWord() {return currentWord;}
-    public void setCurrentWord(String currentWord) {this.currentWord = currentWord;}
+    public String getCurrentWord(int playerNum) {return currentWord[playerNum];}
+    public void setCurrentWord(String currentWord, int playerNum) {this.currentWord[playerNum] = currentWord;}
     public ArrayList<String> getWordBank() {return wordBank;}
     public void setWordBank(ArrayList<String> wordBank) {this.wordBank = wordBank;}
     public HashSet<String> getDictionary(){return dictionary;}

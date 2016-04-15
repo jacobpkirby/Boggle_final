@@ -66,10 +66,17 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
     public void receiveInfo(GameInfo info) {
         if (info instanceof BoggleState) {
             state = (BoggleState) info;
-            yourScoreNumberTextView.setText("" + state.getPlayer1Score());
-            opponentScoreNumberTextView.setText("" + state.getPlayer2Score());
-            letterDisplayTextView.setText("" + state.getCurrentWord());
+            if(this.playerNum == 0) {
 
+                yourScoreNumberTextView.setText("" + state.getPlayer1Score());
+                opponentScoreNumberTextView.setText("" + state.getPlayer2Score());
+                letterDisplayTextView.setText("" + state.getCurrentWord(playerNum));
+            }
+            else{
+                yourScoreNumberTextView.setText("" + state.getPlayer2Score());
+                opponentScoreNumberTextView.setText("" + state.getPlayer1Score());
+                letterDisplayTextView.setText("" + state.getCurrentWord(playerNum));
+            }
 //            if (!(state.getCompCurWord().equals(state.getCompPrevWord()))) {
 //                compWordTextView.setText("" + state.getCompCurWord() + "\n" + compWordTextView.getText());
 //                state.getCompUsedWords().add(state.getCompCurWord());
@@ -251,7 +258,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
         int[][] selectedLetters = state.getSelectedLetters();
         int lastLetterRow = state.getLastLetterRow(selectedLetters);
         int lastLetterCol = state.getLastLetterCol(selectedLetters);
-        String currentWord = state.getCurrentWord();
+        String currentWord = state.getCurrentWord(playerNum);
 
         String[][] gameBoard = state.getGameBoard();
 
@@ -709,9 +716,9 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 
         if (v == submitScoreButton) {
             try {
-                if (!state.getWordBank().contains(state.getCurrentWord()) && state.inDictionary(state.getCurrentWord()) &&
-                        state.wordLength(state.getCurrentWord())) {
-                    usedWordsTextView.setText(state.getCurrentWord()+"\n"+usedWordsTextView.getText());
+                if (!state.getWordBank().contains(state.getCurrentWord(playerNum)) && state.inDictionary(state.getCurrentWord(playerNum)) &&
+                        state.wordLength(state.getCurrentWord(playerNum))) {
+                    usedWordsTextView.setText(state.getCurrentWord(playerNum)+"\n"+usedWordsTextView.getText());
                 }
                 else {
                     Toast.makeText(myActivity, "Invalid Word!", Toast.LENGTH_SHORT).show();
@@ -719,7 +726,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            submitScore = new BoggleSubmitScoreAction(this, state.getCurrentWord());
+            submitScore = new BoggleSubmitScoreAction(this, state.getCurrentWord(playerNum));
             game.sendAction(submitScore);
             int i;
             for (i = 0; i < 20; i++) {

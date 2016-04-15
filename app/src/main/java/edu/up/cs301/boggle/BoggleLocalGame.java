@@ -117,6 +117,8 @@ public class BoggleLocalGame extends LocalGame implements BoggleGame {
 	@Override
 	protected boolean makeMove(GameAction action) throws IOException {
         //action used for when the computer needs to score
+		 GamePlayer player = action.getPlayer();
+		 int playerIdx = this.getPlayerIdx(player);
         if(action instanceof BoggleComputerSubmitScoreAction){
             BoggleComputerSubmitScoreAction BCSA = (BoggleComputerSubmitScoreAction)action;
             String word = BCSA.curWord(); //gets list of all possible words comp can use
@@ -130,21 +132,21 @@ public class BoggleLocalGame extends LocalGame implements BoggleGame {
 			BoggleSelectTileAction BSTA = (BoggleSelectTileAction)action;
 			int curRow = BSTA.curLetterRow;
 			int curCol = BSTA.curLetterCol;
-			String currentWord = state.getCurrentWord(); //pre exsisting word
+			String currentWord = state.getCurrentWord(playerIdx); //pre exsisting word
             //array of all words choosen already and their positions
 			int[][] selectedLetters = state.getSelectedLetters();
 			String[][] gameBoard = state.getGameBoard();
             //adds letter from tile to exsisitng word
 			currentWord = state.addToWord(currentWord, gameBoard[curRow][curCol]);
-			state.setCurrentWord(currentWord);
+			state.setCurrentWord(currentWord,playerIdx);
 			state.setSelectedLetters(selectedLetters);
 			return true;
 		}
 		else if(action instanceof BoggleDeSelectTileAction) {
-			String currentWord = state.getCurrentWord();
+			String currentWord = state.getCurrentWord(playerIdx);
 			int[][] selectedLetters = state.getSelectedLetters();
 			currentWord = state.removeFromWord(currentWord);
-			state.setCurrentWord(currentWord);
+			state.setCurrentWord(currentWord,playerIdx);
 			state.setSelectedLetters(selectedLetters);
         	return true;
 
@@ -157,13 +159,18 @@ public class BoggleLocalGame extends LocalGame implements BoggleGame {
 				if (state.getWordBank().contains(word)) {return false;}
 				else {
 					int score = state.updateScore(word);
-                    state.setPlayer1Score(state.getPlayer1Score() + score);
+					if(playerIdx == 0) {
+						state.setPlayer1Score(state.getPlayer1Score() + score);
+					}
+					else{
+						state.setPlayer2Score(state.getPlayer2Score() + score);
+					}
 					state.addToWordBank(word);
-					state.setCurrentWord("");
+					state.setCurrentWord("",playerIdx);
 					return true;
 				}
 			}
-			state.setCurrentWord("");
+			state.setCurrentWord("",playerIdx);
 			return true;
 		}
 		else if (action instanceof BoggleRotateAction) {
