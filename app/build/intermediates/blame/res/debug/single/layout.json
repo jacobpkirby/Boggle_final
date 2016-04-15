@@ -1,87 +1,71 @@
 [
     {
+        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\FrameworkBoggle5\\app\\build\\intermediates\\res\\merged\\debug\\layout\\boggle_human_player.xml",
+        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\FrameworkBoggle5\\app\\src\\main\\res\\layout\\boggle_human_player.xml"
+    },
+    {
+        "merged": "P:\\CS371\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_local_tab.xml",
+        "source": "P:\\CS371\\Boggle_final\\app\\src\\main\\res\\layout\\game_local_tab.xml"
+    },
+    {
         "merged": "P:\\Boggle Project\\FrameworkBoggle-master\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_config_tabhost.xml",
         "source": "P:\\Boggle Project\\FrameworkBoggle-master\\app\\src\\main\\res\\layout\\game_config_tabhost.xml"
-    },
-    {
-        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\boggle_human_player.xml",
-        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\src\\main\\res\\layout\\boggle_human_player.xml"
-    },
-    {
-        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\FrameworkBoggle5\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_remote_tab.xml",
-        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\FrameworkBoggle5\\app\\src\\main\\res\\layout\\game_remote_tab.xml"
-    },
-    {
-        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_no_gui.xml",
-        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\src\\main\\res\\layout\\game_no_gui.xml"
     },
     {
         "merged": "P:\\Boggle Project\\FrameworkBoggle-master\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_local_tab.xml",
         "source": "P:\\Boggle Project\\FrameworkBoggle-master\\app\\src\\main\\res\\layout\\game_local_tab.xml"
     },
     {
-        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\boggle_human_player.xml",
-        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\src\\main\\res\\layout\\boggle_human_player.xml"
-    },
-    {
-        "merged": "P:\\Boggle Project\\FrameworkBoggle-master\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_config_main.xml",
-        "source": "P:\\Boggle Project\\FrameworkBoggle-master\\app\\src\\main\\res\\layout\\game_config_main.xml"
-    },
-    {
-        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\FrameworkBoggle5\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_config_tabhost.xml",
-        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\FrameworkBoggle5\\app\\src\\main\\res\\layout\\game_config_tabhost.xml"
-    },
-    {
-        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_player_list_row.xml",
-        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\src\\main\\res\\layout\\game_player_list_row.xml"
-    },
-    {
-        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_remote_tab.xml",
-        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\src\\main\\res\\layout\\game_remote_tab.xml"
-    },
-    {
-        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_config_tabhost.xml",
-        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\src\\main\\res\\layout\\game_config_tabhost.xml"
-    },
-    {
-        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\FrameworkBoggle5\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_local_tab.xml",
-        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\FrameworkBoggle5\\app\\src\\main\\res\\layout\\game_local_tab.xml"
-    },
-    {
-        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_no_gui.xml",
-        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\src\\main\\res\\layout\\game_no_gui.xml"
-    },
-    {
-        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_config_tabhost.xml",
-        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\src\\main\\res\\layout\\game_config_tabhost.xml"
-    },
-    {
-        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\FrameworkBoggle5\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_no_gui.xml",
-        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\FrameworkBoggle5\\app\\src\\main\\res\\layout\\game_no_gui.xml"
-    },
-    {
-        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_local_tab.xml",
-        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\src\\main\\res\\layout\\game_local_tab.xml"
-    },
-    {
-        "merged": "P:\\Boggle Project\\FrameworkBoggle-master\\app\\build\\intermediates\\res\\merged\\debug\\layout\\boggle_human_player.xml",
-        "source": "P:\\Boggle Project\\FrameworkBoggle-master\\app\\src\\main\\res\\layout\\boggle_human_player.xml"
-    },
-    {
-        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_player_list_row.xml",
-        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\src\\main\\res\\layout\\game_player_list_row.xml"
-    },
-    {
-        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_local_tab.xml",
-        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\src\\main\\res\\layout\\game_local_tab.xml"
+        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_config_main.xml",
+        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\src\\main\\res\\layout\\game_config_main.xml"
     },
     {
         "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_remote_tab.xml",
         "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\src\\main\\res\\layout\\game_remote_tab.xml"
     },
     {
+        "merged": "P:\\CS371\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_config_main.xml",
+        "source": "P:\\CS371\\Boggle_final\\app\\src\\main\\res\\layout\\game_config_main.xml"
+    },
+    {
+        "merged": "P:\\Boggle Project\\FrameworkBoggle-master\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_config_main.xml",
+        "source": "P:\\Boggle Project\\FrameworkBoggle-master\\app\\src\\main\\res\\layout\\game_config_main.xml"
+    },
+    {
+        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_player_list_row.xml",
+        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\src\\main\\res\\layout\\game_player_list_row.xml"
+    },
+    {
+        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\FrameworkBoggle5\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_no_gui.xml",
+        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\FrameworkBoggle5\\app\\src\\main\\res\\layout\\game_no_gui.xml"
+    },
+    {
         "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_config_main.xml",
         "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\src\\main\\res\\layout\\game_config_main.xml"
+    },
+    {
+        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_no_gui.xml",
+        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\src\\main\\res\\layout\\game_no_gui.xml"
+    },
+    {
+        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_config_tabhost.xml",
+        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\src\\main\\res\\layout\\game_config_tabhost.xml"
+    },
+    {
+        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_config_tabhost.xml",
+        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\src\\main\\res\\layout\\game_config_tabhost.xml"
+    },
+    {
+        "merged": "P:\\CS371\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\layout\\boggle_human_player.xml",
+        "source": "P:\\CS371\\Boggle_final\\app\\src\\main\\res\\layout\\boggle_human_player.xml"
+    },
+    {
+        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_local_tab.xml",
+        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\src\\main\\res\\layout\\game_local_tab.xml"
+    },
+    {
+        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\FrameworkBoggle5\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_config_tabhost.xml",
+        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\FrameworkBoggle5\\app\\src\\main\\res\\layout\\game_config_tabhost.xml"
     },
     {
         "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\FrameworkBoggle5\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_player_list_row.xml",
@@ -92,6 +76,34 @@
         "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\FrameworkBoggle5\\app\\src\\main\\res\\layout\\game_config_main.xml"
     },
     {
+        "merged": "P:\\Boggle Project\\FrameworkBoggle-master\\app\\build\\intermediates\\res\\merged\\debug\\layout\\boggle_human_player.xml",
+        "source": "P:\\Boggle Project\\FrameworkBoggle-master\\app\\src\\main\\res\\layout\\boggle_human_player.xml"
+    },
+    {
+        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_player_list_row.xml",
+        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\src\\main\\res\\layout\\game_player_list_row.xml"
+    },
+    {
+        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\FrameworkBoggle5\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_local_tab.xml",
+        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\FrameworkBoggle5\\app\\src\\main\\res\\layout\\game_local_tab.xml"
+    },
+    {
+        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_local_tab.xml",
+        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\src\\main\\res\\layout\\game_local_tab.xml"
+    },
+    {
+        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_remote_tab.xml",
+        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\src\\main\\res\\layout\\game_remote_tab.xml"
+    },
+    {
+        "merged": "P:\\CS371\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_player_list_row.xml",
+        "source": "P:\\CS371\\Boggle_final\\app\\src\\main\\res\\layout\\game_player_list_row.xml"
+    },
+    {
+        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\FrameworkBoggle5\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_remote_tab.xml",
+        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\FrameworkBoggle5\\app\\src\\main\\res\\layout\\game_remote_tab.xml"
+    },
+    {
         "merged": "P:\\Boggle Project\\FrameworkBoggle-master\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_player_list_row.xml",
         "source": "P:\\Boggle Project\\FrameworkBoggle-master\\app\\src\\main\\res\\layout\\game_player_list_row.xml"
     },
@@ -100,15 +112,31 @@
         "source": "P:\\Boggle Project\\FrameworkBoggle-master\\app\\src\\main\\res\\layout\\game_no_gui.xml"
     },
     {
+        "merged": "P:\\CS371\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_no_gui.xml",
+        "source": "P:\\CS371\\Boggle_final\\app\\src\\main\\res\\layout\\game_no_gui.xml"
+    },
+    {
+        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_no_gui.xml",
+        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\src\\main\\res\\layout\\game_no_gui.xml"
+    },
+    {
         "merged": "P:\\Boggle Project\\FrameworkBoggle-master\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_remote_tab.xml",
         "source": "P:\\Boggle Project\\FrameworkBoggle-master\\app\\src\\main\\res\\layout\\game_remote_tab.xml"
     },
     {
-        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_config_main.xml",
-        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\src\\main\\res\\layout\\game_config_main.xml"
+        "merged": "P:\\CS371\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_config_tabhost.xml",
+        "source": "P:\\CS371\\Boggle_final\\app\\src\\main\\res\\layout\\game_config_tabhost.xml"
     },
     {
-        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\FrameworkBoggle5\\app\\build\\intermediates\\res\\merged\\debug\\layout\\boggle_human_player.xml",
-        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\FrameworkBoggle5\\app\\src\\main\\res\\layout\\boggle_human_player.xml"
+        "merged": "P:\\CS371\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_remote_tab.xml",
+        "source": "P:\\CS371\\Boggle_final\\app\\src\\main\\res\\layout\\game_remote_tab.xml"
+    },
+    {
+        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\boggle_human_player.xml",
+        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\C:\\Users\\Michael\\AndroidStudioProjects\\FrameworkBoggle\\app\\src\\main\\res\\layout\\boggle_human_player.xml"
+    },
+    {
+        "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\layout\\boggle_human_player.xml",
+        "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\src\\main\\res\\layout\\boggle_human_player.xml"
     }
 ]

@@ -14,5 +14,9 @@
     {
         "merged": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
         "source": "P:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\FrameworkBoggle\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "P:\\CS371\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
+        "source": "P:\\CS371\\Boggle_final\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     }
 ]

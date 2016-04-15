@@ -117,6 +117,9 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 //                state.setGameOver(1);
 //            }
             if(state.getSecondsLeft() == 0){
+                for (int i = 0; i<state.getCompUsedWords().size(); i++) {
+                    compWordTextView.append(state.getCompUsedWords().get(i)+"\n");
+                }
                 gameOver = new BoggleTimerOutAction(this);
                 game.sendAction(gameOver);
 
