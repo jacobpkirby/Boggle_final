@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Boggle_final(Test)\\app\\build\\intermediates\\res\\merged\\debug\\menu\\game_main.xml",
+        "source": "C:\\Boggle_final(Test)\\app\\src\\main\\res\\menu\\game_main.xml"
+    },
+    {
         "merged": "C:\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\menu\\game_main.xml",
         "source": "C:\\Boggle_final\\app\\src\\main\\res\\menu\\game_main.xml"
     }

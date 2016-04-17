@@ -4,11 +4,23 @@
         "source": "C:\\Boggle_final\\app\\src\\main\\res\\drawable-hdpi\\ic_action_search.png"
     },
     {
+        "merged": "C:\\Boggle_final(Test)\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_launcher.png",
+        "source": "C:\\Boggle_final(Test)\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
         "merged": "C:\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\purple_delete_button.png",
         "source": "C:\\Boggle_final\\app\\src\\main\\res\\drawable-hdpi\\purple_delete_button.png"
     },
     {
+        "merged": "C:\\Boggle_final(Test)\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\purple_delete_button.png",
+        "source": "C:\\Boggle_final(Test)\\app\\src\\main\\res\\drawable-hdpi\\purple_delete_button.png"
+    },
+    {
         "merged": "C:\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_launcher.png",
         "source": "C:\\Boggle_final\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Boggle_final(Test)\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_action_search.png",
+        "source": "C:\\Boggle_final(Test)\\app\\src\\main\\res\\drawable-hdpi\\ic_action_search.png"
     }
 ]
