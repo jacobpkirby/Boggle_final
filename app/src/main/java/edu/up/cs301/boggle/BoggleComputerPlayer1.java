@@ -24,10 +24,9 @@ public class BoggleComputerPlayer1 extends GameComputerPlayer implements BoggleP
     boolean[][] visited = new boolean[4][4];  //array to see if the tile has been locked at yet
     String[][] board = new String[4][4];//array of all the letters on the board
     ArrayList<String> found = null; // list of all the words found by the computer
-    int tested;
-    String word;
-    int index;
-
+    String builtWord; // the word that gets built from recursive method
+    int index; //determines what position in the array of dictionary words we want to pull a word
+                //from.
     /**
      * constructor
      *
@@ -35,20 +34,20 @@ public class BoggleComputerPlayer1 extends GameComputerPlayer implements BoggleP
      */
     public BoggleComputerPlayer1(String name) {
         super(name);
-        this.tested = 0;
-        index = 0;
-
+        index = 0; //sets the index to 0 to start at the beginning of array
     }
 
     @Override
     protected void receiveInfo(GameInfo info) {
-
         if (info instanceof BoggleState) {
             state = (BoggleState) info;
             visited = getVisited(); //array to see if the tile has been locked at yet
-            board = state.getGameBoard();
+            board = state.getGameBoard(); //array of all letters on board
             // found = getFound(); //list of all words found by computer
 
+            //if the array of found words is null, then the dictionary will be created and
+            //a recursive method will be run to find all the words on the board, thus making
+            //found no longer null
             if (found == null) {
                 found = new ArrayList<String>();
                 try {
@@ -73,15 +72,15 @@ public class BoggleComputerPlayer1 extends GameComputerPlayer implements BoggleP
                     }
                 }
             }
-                if (index >= found.size()) {
+            //if the index number is already at the end of the array just return, cannot sumbit
+            //anymore words
+            if (index >= found.size()) {return;}
 
-                    return;
-                }
-                String word = found.get(index); // the word the computer will submit
-                System.out.println(word);
-                Random rand = new Random();
-                int random = rand.nextInt(aiSmartness());
-                System.out.println("Random Number: " + random);
+            String word = found.get(index); // the word the computer will submit
+            System.out.println(word);
+            Random rand = new Random();
+            int random = rand.nextInt(aiSmartness());
+            System.out.println("Random Number: " + random);
                 if (random == 0) {
                     submitScore = new BoggleComputerSubmitScoreAction(this, word);
                     game.sendAction(submitScore);
@@ -94,7 +93,7 @@ public class BoggleComputerPlayer1 extends GameComputerPlayer implements BoggleP
             return;
         }
 
-    protected int aiSmartness() {return 1;}
+    protected int aiSmartness() {return 20;}
 
 
     /**
@@ -120,11 +119,11 @@ public class BoggleComputerPlayer1 extends GameComputerPlayer implements BoggleP
                 } catch (ArrayIndexOutOfBoundsException e) {
                     continue;
                 }
-                word = currWord + board[x][y];
-                if (found.contains(word)) continue; //if word already exsists in list dont add
+                builtWord = currWord + board[x][y];
+                if (found.contains(builtWord)) continue; //if word already exsists in list dont add
                 //if word is over 3 letters and in dictionary add to found list
-                if (word.length() > 2 && dict.contains(word.toLowerCase())) {
-                    setFound(word);
+                if (builtWord.length() > 2 && dict.contains(builtWord.toLowerCase())) {
+                    setFound(builtWord);
                 }
                 boolean[][] copy = new boolean[4][4]; // copy of visited tiles
                 for(int i = 0; i < 4; i++){
@@ -136,7 +135,7 @@ public class BoggleComputerPlayer1 extends GameComputerPlayer implements BoggleP
                 for(int i = 0; i< found.size(); i++){
                     copy2.add(found.get(i));
                 }
-                findWords(dict, board, x, y, word, copy, copy2);
+                findWords(dict, board, x, y, builtWord, copy, copy2);
             }
         }
 

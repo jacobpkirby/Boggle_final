@@ -334,7 +334,8 @@
             android:text="Submit Word"
             android:layout_marginRight="20dp"
             android:background="#e6b776"
-            android:layout_marginLeft="20dp" />
+            android:layout_marginLeft="20dp"
+            android:textColor="#010000" />
 
         <ScrollView
             android:id="@+id/wordBankScrollView"
@@ -378,7 +379,8 @@
             android:layout_marginLeft="20dp"
             android:text="Rotate Board"
             android:background="#e6b776"
-            android:layout_marginRight="20dp" />
+            android:layout_marginRight="20dp"
+            android:textColor="#010000" />
 
     </LinearLayout>
 

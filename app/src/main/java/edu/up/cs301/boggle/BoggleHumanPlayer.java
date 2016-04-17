@@ -151,10 +151,20 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                             }else if(state.getCompUsedWords().get(i).length() >= 8 ){
                                 points = 11;
                             }compWordTextView.append(state.getCompUsedWords().get(i) + "      -" + points + "\n");
+
+                                yourScoreNumberTextView.setText("" + (state.getPlayer1Score() - points));
+                                opponentScoreNumberTextView.setText("" + (state.getPlayer2Score() - points));
+                                submitScoreButton.setEnabled(false);
+                                rotateButton.setEnabled(false);
+
+                               //SET ALL THE BUTTONS TO DISABLED ONCE THE TIMER ISSUE IS SOLVED
+
+
+
                         }
                         else{
                           //  compWordTextView.setTextColor(Color.BLACK);
-                            compWordTextView.append(state.getCompUsedWords().get(i)+"\n");
+                            compWordTextView.append(state.getCompUsedWords().get(i) + "\n");
                         }
 
                 }
