@@ -16,26 +16,26 @@
         android:layout_marginRight="25dp"
         android:layout_weight=".5"
         android:orientation="horizontal"
-        android:paddingTop="25dp">
+        android:paddingTop="25dp"
+        android:weightSum="1">
 
         <TextView
             android:id="@+id/yourScoreTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_width="135dp"
+            android:layout_height="fill_parent"
             android:text="Your Score: "
             android:textAlignment="center"
             android:textColor="#100c00"
-            android:textIsSelectable="true"
+            android:textIsSelectable="false"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:typeface="sans" />
+            android:typeface="sans"
+            android:layout_marginLeft="10dp" />
 
         <TextView
             android:id="@+id/yourScoreNumberTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="5.29"
+            android:layout_width="100dp"
+            android:layout_height="fill_parent"
             android:textAlignment="textStart"
             android:textColor="#100c00"
             android:textSize="24sp"
@@ -43,20 +43,22 @@
             android:typeface="sans" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:id="@+id/timerText"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="2.02"
             android:textSize="45sp"
             android:textStyle="bold"
-            android:typeface="sans" />
+            android:typeface="sans"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="0.71"
+            android:gravity="center_vertical|center_horizontal" />
 
         <TextView
             android:id="@+id/opponentScoreTitleTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.11"
+            android:layout_width="200dp"
+            android:layout_height="fill_parent"
             android:text="Opponent&apos;s Score:"
             android:textAlignment="center"
             android:textColor="#100c00"
@@ -66,14 +68,15 @@
 
         <TextView
             android:id="@+id/opponentScoreNumberTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.35"
+            android:layout_width="50dp"
+            android:layout_height="fill_parent"
             android:textAlignment="center"
             android:textColor="#100c00"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:typeface="sans" />
+            android:typeface="sans"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="3dp" />
 
     </LinearLayout>
 
@@ -98,7 +101,7 @@
             android:text="Boggle"
             android:textAlignment="gravity"
             android:textColor="#2d0606"
-            android:textIsSelectable="true"
+            android:textIsSelectable="false"
             android:textSize="75sp"
             android:textStyle="bold|italic"
             android:typeface="sans" />
@@ -325,19 +328,18 @@
 
         <Button
             android:id="@+id/submitScoreButton"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="125dp"
+            android:layout_height="100dp"
             android:layout_gravity="center"
-            android:layout_weight=".5"
             android:text="Submit Word"
             android:layout_marginRight="20dp"
-            android:background="#e6b776" />
+            android:background="#e6b776"
+            android:layout_marginLeft="20dp" />
 
         <ScrollView
             android:id="@+id/wordBankScrollView"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="fill_parent"
-            android:layout_weight="5"
             android:fillViewport="true"
             android:background="#f3cbcb"
             android:foregroundGravity="center_horizontal">
@@ -353,10 +355,9 @@
         </ScrollView>
 
         <ScrollView
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="match_parent"
             android:id="@+id/compScrollView"
-            android:layout_weight="5"
             android:background="#f3cbcb"
             android:fillViewport="false">
 
@@ -371,13 +372,13 @@
 
         <Button
             android:id="@+id/rotateBackwardButton"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="125dp"
+            android:layout_height="100dp"
             android:layout_gravity="center"
             android:layout_marginLeft="20dp"
-            android:layout_weight=".5"
             android:text="Rotate Board"
-            android:background="#e6b776" />
+            android:background="#e6b776"
+            android:layout_marginRight="20dp" />
 
     </LinearLayout>
 

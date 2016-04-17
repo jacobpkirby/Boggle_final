@@ -122,9 +122,9 @@ public class BoggleLocalGame extends LocalGame implements BoggleGame {
         if(action instanceof BoggleComputerSubmitScoreAction){
             BoggleComputerSubmitScoreAction BCSA = (BoggleComputerSubmitScoreAction)action;
             String word = BCSA.curWord(); //gets list of all possible words comp can use
-            //state.setCompUsedWords(word); //puts the words used by the computer in array
+            state.setCompUsedWords(word); //puts the words used by the computer in array
             System.out.println("----"+ word+ "------");
-            int score = state.updateScore(word); //calculates the score for the word
+            int score = state.compUpdateScore(word); //calculates the score for the word
             state.setPlayer2Score(score + state.getPlayer2Score()); //sets the comps score
             return true;
 		}
@@ -156,7 +156,10 @@ public class BoggleLocalGame extends LocalGame implements BoggleGame {
 			String word = BSSA.currentWord;
             //if word is more then 3 letters and in dictionary
 			if(state.wordLength(word)&&state.inDictionary(word)){
-				if (state.getWordBank().contains(word)) {return false;}
+				if (state.getWordBank().contains(word)) {
+					state.setCurrentWord("",playerIdx);
+					return false;
+				}
 				else {
 					int score = state.updateScore(word);
 					if(playerIdx == 0) {
@@ -166,7 +169,10 @@ public class BoggleLocalGame extends LocalGame implements BoggleGame {
 						state.setPlayer2Score(state.getPlayer2Score() + score);
 					}
 					state.addToWordBank(word);
-					state.setCurrentWord("",playerIdx);
+					state.setCurrentWord("", playerIdx);
+					int[][] selectedLetters = state.getSelectedLetters();
+
+					state.setSelectedLetters(selectedLetters);
 					return true;
 				}
 			}
@@ -178,7 +184,7 @@ public class BoggleLocalGame extends LocalGame implements BoggleGame {
 			return true;
 		}
         else if(action instanceof BoggleTimerOutAction){
-            checkIfGameOver();
+
         }
 		return false;
 	}

@@ -12,56 +12,54 @@
     <LinearLayout
         android:id="@+id/TopLayout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
-        android:layout_weight="1.19"
         android:orientation="horizontal"
-        android:paddingTop="25dp">
+        android:paddingTop="25dp"
+        android:layout_weight=".1">
 
         <TextView
             android:id="@+id/yourScoreTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.31"
+            android:layout_width="135dp"
+            android:layout_height="match_parent"
             android:text="Your Score: "
             android:textAlignment="center"
             android:textColor="#100c00"
-            android:textIsSelectable="true"
+            android:textIsSelectable="false"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:typeface="sans" />
+            android:typeface="sans"
+            android:layout_marginLeft="20dp" />
 
         <TextView
             android:id="@+id/yourScoreNumberTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.74"
+            android:layout_width="100dp"
+            android:layout_height="fill_parent"
             android:text="00"
             android:textAlignment="textStart"
             android:textColor="#100c00"
-            android:textIsSelectable="true"
+            android:textIsSelectable="false"
             android:textSize="24sp"
             android:textStyle="bold"
             android:typeface="sans" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="450dp"
             android:layout_height="wrap_content"
             android:id="@+id/timerText"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.96"
             android:textSize="45sp"
             android:textStyle="bold"
             android:typeface="sans"
             android:layout_marginRight="5dp"
-            android:layout_marginLeft="5dp" />
+            android:layout_marginLeft="5dp"
+            android:gravity="center_vertical|center_horizontal" />
 
         <TextView
             android:id="@+id/opponentScoreTitleTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.42"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
             android:text="Opponent&apos;s Score:"
             android:textAlignment="center"
             android:textColor="#100c00"
@@ -71,15 +69,16 @@
 
         <TextView
             android:id="@+id/opponentScoreNumberTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.08"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
             android:text="00"
             android:textAlignment="center"
             android:textColor="#100c00"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:typeface="sans" />
+            android:typeface="sans"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="3dp" />
 
     </LinearLayout>
 
@@ -88,7 +87,8 @@
         android:layout_width="match_parent"
         android:layout_height="89dp"
         android:orientation="horizontal"
-        android:textAlignment="center">
+        android:textAlignment="center"
+        android:layout_weight=".25">
 
         <TextView
             android:id="@+id/titleTextView"
@@ -103,7 +103,7 @@
             android:text="Boggle"
             android:textAlignment="gravity"
             android:textColor="#2d0606"
-            android:textIsSelectable="true"
+            android:textIsSelectable="false"
             android:textSize="75sp"
             android:textStyle="bold|italic"
             android:typeface="sans" />
@@ -333,7 +333,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="40sp"
+                    android:textSize="30sp"
                     android:textIsSelectable="false"
                     android:id="@+id/compWordTextView" />
             </ScrollView>
@@ -354,34 +354,36 @@
 
         <Button
             android:id="@+id/submitScoreButton"
-            android:layout_width="80dp"
+            android:layout_width="150dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
-            android:layout_weight=".5"
             android:text="Submit Word"
-            android:layout_marginRight="5dp"
-            android:background="#e6b776" />
+            android:layout_marginRight="20dp"
+            android:background="#e6b776"
+            android:layout_marginLeft="20dp" />
 
         <TextView
             android:id="@+id/letterDisplayTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="550dp"
             android:layout_height="fill_parent"
-            android:layout_weight="1"
             android:padding="5dp"
-            android:textAlignment="center"
+            android:textAlignment="gravity"
             android:textColor="#000000"
             android:textSize="26sp"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:layout_marginLeft="20sp"
+            android:layout_marginRight="20dp"
+            android:gravity="center_vertical|center_horizontal" />
 
         <Button
             android:id="@+id/rotateBackwardButton"
-            android:layout_width="80dp"
+            android:layout_width="150dp"
             android:layout_height="80dp"
-            android:layout_weight=".5"
             android:text="Rotate Board"
             android:layout_gravity="center"
-            android:layout_marginLeft="5dp"
-            android:background="#e6b776" />
+            android:layout_marginLeft="20dp"
+            android:background="#e6b776"
+            android:layout_marginRight="20dp" />
 
 
     </LinearLayout>

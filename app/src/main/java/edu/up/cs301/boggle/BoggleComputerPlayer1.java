@@ -74,13 +74,14 @@ public class BoggleComputerPlayer1 extends GameComputerPlayer implements BoggleP
                 }
             }
                 if (index >= found.size()) {
-                    System.out.println("Here");
+
                     return;
                 }
-                String word = found.get(index); // the word the computer will sumbit
+                String word = found.get(index); // the word the computer will submit
                 System.out.println(word);
                 Random rand = new Random();
                 int random = rand.nextInt(aiSmartness());
+                System.out.println("Random Number: " + random);
                 if (random == 0) {
                     submitScore = new BoggleComputerSubmitScoreAction(this, word);
                     game.sendAction(submitScore);
@@ -93,9 +94,7 @@ public class BoggleComputerPlayer1 extends GameComputerPlayer implements BoggleP
             return;
         }
 
-    protected int aiSmartness() {
-        return 5;
-    }
+    protected int aiSmartness() {return 1;}
 
 
     /**
