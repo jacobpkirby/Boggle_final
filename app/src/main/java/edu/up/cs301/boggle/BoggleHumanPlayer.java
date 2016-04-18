@@ -97,7 +97,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             }
 //            if (!(state.getCompCurWord().equals(state.getCompPrevWord()))) {
 //                compWordTextView.setText("" + state.getCompCurWord() + "\n" + compWordTextView.getText());
-//                state.getCompUsedWords().add(state.getCompCurWord());
+//                state.getWordBank(1).add(state.getCompCurWord());
 //                state.setCompPrevWord(state.getCompCurWord());
 //                state.setCompCurWord("");
 //            }
@@ -135,42 +135,79 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 //                state.setGameOver(1);
 //            }
 
-            if(state.getSecondsLeft() == 0){
+            if(state.getSecondsLeft() == 0) {
 
-                    compWordTextView.setText("Opponents Words: \n");
+                compWordTextView.setText("Opponents Words: \n");
 
-                    for (int i = 0; i<state.getCompUsedWords().size(); i++) {
-                        if(state.getWordBank(playerNum).contains(state.getCompUsedWords().get(i))) {
-                            int points = 0;
-                            if(state.getCompUsedWords().get(i).length() == 3 || state.getCompUsedWords().get(i).length() == 4)
-                            {
-                                points = 1;
-                            }else if(state.getCompUsedWords().get(i).length() == 5){
-                                points = 2;
-                            }else if(state.getCompUsedWords().get(i).length() == 6){
-                                points = 3;
-                            }else if(state.getCompUsedWords().get(i).length() == 7){
-                                points = 5;
-                            }else if(state.getCompUsedWords().get(i).length() >= 8 ){
-                                points = 11;
-                            }compWordTextView.append(state.getCompUsedWords().get(i) + "      -" + points + "\n");
-
-                                yourScoreNumberTextView.setText("" + (state.getPlayer1Score() - points));
-                                opponentScoreNumberTextView.setText("" + (state.getPlayer2Score() - points));
-                                submitScoreButton.setEnabled(false);
-                                rotateButton.setEnabled(false);
-
-                               //SET ALL THE BUTTONS TO DISABLED ONCE THE TIMER ISSUE IS SOLVED
-
-
-
+                if (playerNum == 0) {
+                    for (int i = 0; i < state.getWordBank(1).size(); i++) {
+                    if (state.getWordBank(0).contains(state.getWordBank(1).get(i))) {
+                        int points = 0;
+                        if (state.getWordBank(1).get(i).length() == 3 || state.getWordBank(1).get(i).length() == 4) {
+                            points = 1;
+                        } else if (state.getWordBank(1).get(i).length() == 5) {
+                            points = 2;
+                        } else if (state.getWordBank(1).get(i).length() == 6) {
+                            points = 3;
+                        } else if (state.getWordBank(1).get(i).length() == 7) {
+                            points = 5;
+                        } else if (state.getWordBank(1).get(i).length() >= 8) {
+                            points = 11;
                         }
-                        else{
-                          //  compWordTextView.setTextColor(Color.BLACK);
-                            compWordTextView.append(state.getCompUsedWords().get(i) + "\n");
-                        }
+                        compWordTextView.append(state.getWordBank(1).get(i) + "      -" + points + "\n");
+
+                            yourScoreNumberTextView.setText("" + (state.getPlayer1Score() - points));
+                            opponentScoreNumberTextView.setText("" + (state.getPlayer2Score() - points));
+
+                        submitScoreButton.setEnabled(false);
+                        rotateButton.setEnabled(false);
+
+                        //SET ALL THE BUTTONS TO DISABLED ONCE THE TIMER ISSUE IS SOLVED
+
+
+                    } else {
+                        //  compWordTextView.setTextColor(Color.BLACK);
+                        compWordTextView.append(state.getWordBank(1).get(i) + "\n");
+                    }
 
                 }
+            } else {
+
+                    for (int i = 0; i < state.getWordBank(0).size(); i++) {
+                        if (state.getWordBank(1).contains(state.getWordBank(0).get(i))) {
+                            int points = 0;
+                            if (state.getWordBank(0).get(i).length() == 3 || state.getWordBank(0).get(i).length() == 4) {
+                                points = 1;
+                            } else if (state.getWordBank(0).get(i).length() == 5) {
+                                points = 2;
+                            } else if (state.getWordBank(0).get(i).length() == 6) {
+                                points = 3;
+                            } else if (state.getWordBank(0).get(i).length() == 7) {
+                                points = 5;
+                            } else if (state.getWordBank(0).get(i).length() >= 8) {
+                                points = 11;
+                            }
+                            compWordTextView.append(state.getWordBank(0).get(i) + "      -" + points + "\n");
+
+                                yourScoreNumberTextView.setText("" + (state.getPlayer2Score() - points));
+                                opponentScoreNumberTextView.setText("" + (state.getPlayer1Score() - points));
+
+
+                            submitScoreButton.setEnabled(false);
+                            rotateButton.setEnabled(false);
+
+                            //SET ALL THE BUTTONS TO DISABLED ONCE THE TIMER ISSUE IS SOLVED
+
+
+                        } else {
+                            //  compWordTextView.setTextColor(Color.BLACK);
+                            compWordTextView.append(state.getWordBank(0).get(i) + "\n");
+                        }
+
+                    }
+
+                }
+
                 gameOver = new BoggleTimerOutAction(this);
                 game.sendAction(gameOver);
             }
