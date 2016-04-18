@@ -96,7 +96,7 @@ public class BoggleLocalGame extends LocalGame implements BoggleGame {
 			String currentWord = state.getCurrentWord(playerIdx); //pre exsisting word
             //array of all words choosen already and their positions
 			int[][] selectedLetters = state.getSelectedLetters();
-			String[][] gameBoard = state.getGameBoard();
+			String[][] gameBoard = state.getGameBoard(playerIdx);
             //adds letter from tile to exsisitng word
 			currentWord = state.addToWord(currentWord, gameBoard[curRow][curCol]);
 			state.setCurrentWord(currentWord,playerIdx);
@@ -141,7 +141,7 @@ public class BoggleLocalGame extends LocalGame implements BoggleGame {
 			return true;
 		}
 		else if (action instanceof BoggleRotateAction) {
-			state.rotateBoard(state.getGameBoard());
+			state.rotateBoard(state.getGameBoard(playerIdx), playerIdx);
 			return true;
 		}
         else if(action instanceof BoggleTimerOutAction){
