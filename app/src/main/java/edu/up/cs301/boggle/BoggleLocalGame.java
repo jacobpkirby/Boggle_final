@@ -51,15 +51,15 @@ public class BoggleLocalGame extends LocalGame implements BoggleGame {
 			String winTxt = "";
 
 			if (winner == 1) {
-				winTxt = "Game over! "+playerNames[0]+" wins with a score of "+state.getPlayer1Score()+"!";
+				winTxt = "Game over! "+playerNames[0]+" wins!";
 			}
 
 			else if (winner == 2) {
-				winTxt = "Game over! "+playerNames[1]+" wins with a score of "+state.getPlayer2Score()+"!";
+				winTxt = "Game over! "+playerNames[1]+" wins!";
 			}
 
 			else if (winner == 3) {
-				winTxt = "It's a draw! "+playerNames[0]+" and "+playerNames[1]+" tie with a score of "+state.getPlayer1Score()+" each!";
+				winTxt = "It's a draw! "+playerNames[0]+" and "+playerNames[1]+" tie!";
 			}
 			return winTxt;
 		}
