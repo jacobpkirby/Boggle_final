@@ -14,5 +14,9 @@
     {
         "merged": "C:\\Boggle_final(1)\\app\\build\\intermediates\\res\\merged\\debug\\raw\\words.txt",
         "source": "C:\\Boggle_final(1)\\app\\src\\main\\res\\raw\\words.txt"
+    },
+    {
+        "merged": "P:\\CS371\\Bogglefinal\\app\\build\\intermediates\\res\\merged\\debug\\raw\\words.txt",
+        "source": "P:\\CS371\\Bogglefinal\\app\\src\\main\\res\\raw\\words.txt"
     }
 ]
