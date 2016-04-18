@@ -98,7 +98,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 //                state.setCompCurWord("");
 //            }
 
-            String[][] gameBoard = state.getGameBoard();
+            String[][] gameBoard = state.getGameBoard(playerNum);
             int seconds1 = state.getSecondsLeft();
 
 
@@ -226,7 +226,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 
         if (state != null) {
             receiveInfo(state);
-            gameBoard = state.getGameBoard();
+            gameBoard = state.getGameBoard(playerNum);
         }
         tile1ButtonPushed = false;
         tile2ButtonPushed = false;
@@ -340,7 +340,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
         int lastLetterCol = state.getLastLetterCol(selectedLetters);
         String currentWord = state.getCurrentWord(playerNum);
 
-        String[][] gameBoard = state.getGameBoard();
+        String[][] gameBoard = state.getGameBoard(playerNum);
 
 
         if (v == tile1Button && !tile1ButtonPushed) {

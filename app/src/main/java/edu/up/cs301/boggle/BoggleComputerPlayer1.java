@@ -42,7 +42,7 @@ public class BoggleComputerPlayer1 extends GameComputerPlayer implements BoggleP
         if (info instanceof BoggleState) {
             state = (BoggleState) info;
             visited = getVisited(); //array to see if the tile has been locked at yet
-            board = state.getGameBoard(); //array of all letters on board
+            board = state.getGameBoard(playerNum); //array of all letters on board
             // found = getFound(); //list of all words found by computer
 
             //if the array of found words is null, then the dictionary will be created and
