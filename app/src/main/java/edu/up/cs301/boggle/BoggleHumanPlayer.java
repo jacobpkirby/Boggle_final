@@ -922,7 +922,20 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 
 
         if (v == submitScoreButton) {
+            try {
+                if (state.getCurrentWord(playerNum).length()<3) {
+                    Toast.makeText(myActivity, "Entered Word Is Too Short!", Toast.LENGTH_SHORT).show();
+                }
 
+                else if ((state.getCurrentWord(playerNum).length()>3) && (!state.inDictionary(state.getCurrentWord(playerNum)))) {
+                    Toast.makeText(myActivity, "Entered Word Is Not In Dictionary!", Toast.LENGTH_SHORT).show();
+                }
+                else if (state.getWordBank(playerNum).contains(state.getCurrentWord(playerNum))) {
+                    Toast.makeText(myActivity, "Entered Word Has Been Previously Entered!", Toast.LENGTH_SHORT).show();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             submitScore = new BoggleSubmitScoreAction(this, state.getCurrentWord(playerNum));
             game.sendAction(submitScore);
 
