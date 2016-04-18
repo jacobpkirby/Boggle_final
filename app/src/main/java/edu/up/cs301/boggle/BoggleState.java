@@ -73,7 +73,7 @@ public class BoggleState extends GameState {
         curLetter = "a";
         curLetterRow = 4; //4 means null
         curLetterCol = 4; // 4 means null
-        secondsLeft = 180; // 3 minutes of play
+        secondsLeft = 30; // 3 minutes of play
 
         //Assigns random letters to the tiles
         Random r1 = new Random();
@@ -195,6 +195,8 @@ public class BoggleState extends GameState {
         curLetterCol = state.curLetterCol;
         secondsLeft = state.secondsLeft;
         gameOver = state.gameOver;
+        wordBank1 = new ArrayList<String>();
+        wordBank2 = new ArrayList<String>();
 
         for (int i = 0; i < state.getWordBank(0).size(); i++) {
 

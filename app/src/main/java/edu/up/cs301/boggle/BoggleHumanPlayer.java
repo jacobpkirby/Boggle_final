@@ -86,11 +86,13 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             }
 
 
-            for(int i = 0; i < state.getWordBank(playerNum).size(); i++){
-                if(state.getWordBank(playerNum).get(i) != null &&
-                        !usedWordsTextView.getText().toString().contains(state.getWordBank(playerNum).get(i))) {
-                    usedWordsTextView.setText("" + state.getWordBank(playerNum).get(i) +
-                            "\n"+usedWordsTextView.getText());
+            if (state.getWordBank(playerNum) != null) {
+                for (int i = 0; i < state.getWordBank(playerNum).size(); i++) {
+                    if (state.getWordBank(playerNum).get(i) != null &&
+                            !usedWordsTextView.getText().toString().contains(state.getWordBank(playerNum).get(i))) {
+                        usedWordsTextView.setText("" + state.getWordBank(playerNum).get(i) +
+                                "\n" + usedWordsTextView.getText());
+                    }
                 }
             }
 //            if (!(state.getCompCurWord().equals(state.getCompPrevWord()))) {
