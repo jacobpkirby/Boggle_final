@@ -31,13 +31,10 @@ public class BoggleState extends GameState {
     private int playerTurn; //tells which players turn it is
     private int player1Score; //tracks the score of player1
     private int player2Score; //tracks the score of player2
-    //NETWORK
     private String[] currentWord = new String[2]; //the current word the player is making
     private boolean timer; //true if the timer is running, false if timer has stopped
-
-    private ArrayList<String> wordBank1; //the current words in the word bank
-    private ArrayList<String> wordBank2; //the current words in the word bank
-
+    private ArrayList<String> wordBank1; //the current words in the word bank for human
+    private ArrayList<String> wordBank2; //the current words in the word bank for opponent
     private String[][] gameBoard = new String[4][4]; //array of all the letters on the board
     private boolean[][] visited = new boolean[4][4];//tells weather a tile has been searched already
     private int[][] selectedLetters = new int[20][2]; //list of selected letters positions
@@ -47,7 +44,6 @@ public class BoggleState extends GameState {
     private int curLetterRow; //current row of letter selected
     private int curLetterCol;
     private int secondsLeft;  //tells how much time is left on the timer
-    //private String compPrevWord = ""; //computer's previously played word
     private int gameOver; //determines if game is over
     public int arrayIndex;//int for the index, used in the Local Game
 
@@ -73,7 +69,7 @@ public class BoggleState extends GameState {
         curLetter = "a";
         curLetterRow = 4; //4 means null
         curLetterCol = 4; // 4 means null
-        secondsLeft = 30; // 3 minutes of play
+        secondsLeft = 180; // 3 minutes of play
 
         //Assigns random letters to the tiles
         Random r1 = new Random();
@@ -174,10 +170,8 @@ public class BoggleState extends GameState {
           selectedLetters[k][1] = 4;
         }
         wordBank1 = new ArrayList<String>();  // human used words
-        wordBank2 = new ArrayList<String>();
-
-
-        compUsedWords = new ArrayList<String>(); //computer used words
+        wordBank2 = new ArrayList<String>();  //opponants used words
+        //compUsedWords = new ArrayList<String>(); //computer used words
     }
 
     /**
@@ -199,25 +193,15 @@ public class BoggleState extends GameState {
         wordBank2 = new ArrayList<String>();
 
         for (int i = 0; i < state.getWordBank(0).size(); i++) {
-
             wordBank1.add(state.wordBank1.get(i));
         }
-
-
         for (int i = 0; i < state.getWordBank(1).size(); i++) {
-
             wordBank2.add(state.wordBank2.get(i));
         }
-
-
-
-        compUsedWords = state.compUsedWords;
         timer = state.timer;
         gameBoard = Arrays.copyOf(state.gameBoard, state.gameBoard.length);
         visited = Arrays.copyOf(state.visited,state.gameBoard.length);
         selectedLetters = Arrays.copyOf(state.selectedLetters, state.selectedLetters.length);
-        //compPrevWord = state.compPrevWord;
-        //NETWORK
         this.currentWord = new String[2];
         for(int i = 0; i < 2;i ++){
             this.currentWord[i]= state.currentWord[i];
@@ -244,20 +228,13 @@ public class BoggleState extends GameState {
     public void setPlayer1Score(int player1Score) {this.player1Score = player1Score;}
     public int getPlayer2Score() {return player2Score;}
     public void setPlayer2Score(int player2Score) {this.player2Score = player2Score;}
-    //NETWORK
     public String getCurrentWord(int playerNum) {return currentWord[playerNum];}
     public void setCurrentWord(String currentWord, int playerNum) {this.currentWord[playerNum] = currentWord;}
     public ArrayList<String> getWordBank(int playerNum) {
-
-        if (playerNum == 0) {
-            return wordBank1;
-        }
-        else {
-            return wordBank2;
+        if (playerNum == 0) {return wordBank1;
+        }else{return wordBank2;
         }
     }
-//    public void setWordBank(ArrayList<String> wordBank) {
-//        this.wordBank = wordBank;}
     public HashSet<String> getDictionary(){return dictionary;}
     public int getGameOver(){return this.gameOver;}
     public void setGameOver(int gameOver) {this.gameOver = gameOver;}

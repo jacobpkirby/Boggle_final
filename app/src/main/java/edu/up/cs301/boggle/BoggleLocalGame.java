@@ -145,6 +145,7 @@ public class BoggleLocalGame extends LocalGame implements BoggleGame {
 			return true;
 		}
         else if(action instanceof BoggleTimerOutAction){
+			return true;
 
         }
 		return false;

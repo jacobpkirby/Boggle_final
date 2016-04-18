@@ -1,14 +1,18 @@
 [
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/layout-land/boggle_human_player.xml",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/layout-land/boggle_human_player.xml"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Boggle_final(Test)\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\boggle_human_player.xml",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Boggle_final(Test)\\app\\src\\main\\res\\layout-land\\boggle_human_player.xml"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Boggle_final(Test)\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\boggle_human_player.xml",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Boggle_final(Test)\\app\\src\\main\\res\\layout-land\\boggle_human_player.xml"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\boggle_human_player.xml",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\layout-land\\boggle_human_player.xml"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\boggle_human_player.xml",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Boggle_final\\app\\src\\main\\res\\layout-land\\boggle_human_player.xml"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\boggle_human_player.xml",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Boggle_final\\app\\src\\main\\res\\layout-land\\boggle_human_player.xml"
+    },
+    {
+        "merged": "C:\\Boggle_final(1)\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\boggle_human_player.xml",
+        "source": "C:\\Boggle_final(1)\\app\\src\\main\\res\\layout-land\\boggle_human_player.xml"
     }
 ]

@@ -36,10 +36,6 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             opponentScoreNumberTextView,compWordTextView;
     public static String buttonLetter;
 
-    public static String tile1ButtonLetter, tile2ButtonLetter, tile3ButtonLetter, tile4ButtonLetter,
-            tile5ButtonLetter, tile6ButtonLetter, tile7ButtonLetter, tile8ButtonLetter,
-            tile9ButtonLetter, tile10ButtonLetter, tile11ButtonLetter, tile12ButtonLetter,
-            tile13ButtonLetter, tile14ButtonLetter, tile15ButtonLetter, tile16ButtonLetter;
 
     public static Boolean tile1ButtonPushed, tile2ButtonPushed, tile3ButtonPushed, tile4ButtonPushed,
             tile5ButtonPushed, tile6ButtonPushed, tile7ButtonPushed, tile8ButtonPushed,
@@ -136,43 +132,27 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 //            }
 
             if(state.getSecondsLeft() == 0) {
-
                 compWordTextView.setText("Opponents Words: \n");
-
                 if (playerNum == 0) {
                     for (int i = 0; i < state.getWordBank(1).size(); i++) {
                     if (state.getWordBank(0).contains(state.getWordBank(1).get(i))) {
                         int points = 0;
                         if (state.getWordBank(1).get(i).length() == 3 || state.getWordBank(1).get(i).length() == 4) {
                             points = 1;
-                        } else if (state.getWordBank(1).get(i).length() == 5) {
-                            points = 2;
-                        } else if (state.getWordBank(1).get(i).length() == 6) {
-                            points = 3;
-                        } else if (state.getWordBank(1).get(i).length() == 7) {
-                            points = 5;
-                        } else if (state.getWordBank(1).get(i).length() >= 8) {
-                            points = 11;
+                        } else if (state.getWordBank(1).get(i).length() == 5) {points = 2;
+                        } else if (state.getWordBank(1).get(i).length() == 6) {points = 3;
+                        } else if (state.getWordBank(1).get(i).length() == 7) {points = 5;
+                        } else if (state.getWordBank(1).get(i).length() >= 8) {points = 11;
                         }
-                        compWordTextView.append(state.getWordBank(1).get(i) + "      -" + points + "\n");
-
+                        compWordTextView.append(state.getWordBank(1).get(i) +
+                                "      -" + points + "\n");
                             yourScoreNumberTextView.setText("" + (state.getPlayer1Score() - points));
                             opponentScoreNumberTextView.setText("" + (state.getPlayer2Score() - points));
-
-                        submitScoreButton.setEnabled(false);
-                        rotateButton.setEnabled(false);
-
-                        //SET ALL THE BUTTONS TO DISABLED ONCE THE TIMER ISSUE IS SOLVED
-
-
                     } else {
-                        //  compWordTextView.setTextColor(Color.BLACK);
                         compWordTextView.append(state.getWordBank(1).get(i) + "\n");
                     }
-
                 }
             } else {
-
                     for (int i = 0; i < state.getWordBank(0).size(); i++) {
                         if (state.getWordBank(1).contains(state.getWordBank(0).get(i))) {
                             int points = 0;
@@ -188,30 +168,40 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                                 points = 11;
                             }
                             compWordTextView.append(state.getWordBank(0).get(i) + "      -" + points + "\n");
-
                                 yourScoreNumberTextView.setText("" + (state.getPlayer2Score() - points));
                                 opponentScoreNumberTextView.setText("" + (state.getPlayer1Score() - points));
-
-
-                            submitScoreButton.setEnabled(false);
-                            rotateButton.setEnabled(false);
-
-                            //SET ALL THE BUTTONS TO DISABLED ONCE THE TIMER ISSUE IS SOLVED
-
-
                         } else {
-                            //  compWordTextView.setTextColor(Color.BLACK);
                             compWordTextView.append(state.getWordBank(0).get(i) + "\n");
                         }
-
                     }
-
                 }
+                submitScoreButton.setEnabled(false);
+                rotateButton.setEnabled(false);
+                tile1Button.setEnabled(false);
+                tile2Button.setEnabled(false);
+                tile3Button.setEnabled(false);
+                tile4Button.setEnabled(false);
+                tile5Button.setEnabled(false);
+                tile6Button.setEnabled(false);
+                tile7Button.setEnabled(false);
+                tile8Button.setEnabled(false);
+                tile9Button.setEnabled(false);
+                tile10Button.setEnabled(false);
+                tile11Button.setEnabled(false);
+                tile12Button.setEnabled(false);
+                tile13Button.setEnabled(false);
+                tile14Button.setEnabled(false);
+                tile15Button.setEnabled(false);
+                tile16Button.setEnabled(false);
+
 
                 gameOver = new BoggleTimerOutAction(this);
                 game.sendAction(gameOver);
+
             }
+
         }
+
     }
 
     public void setAsGui(GameMainActivity activity) {
