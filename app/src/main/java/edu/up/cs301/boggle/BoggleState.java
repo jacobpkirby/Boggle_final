@@ -34,7 +34,10 @@ public class BoggleState extends GameState {
     //NETWORK
     private String[] currentWord = new String[2]; //the current word the player is making
     private boolean timer; //true if the timer is running, false if timer has stopped
-    private ArrayList<String> wordBank; //the current words in the word bank
+
+    private ArrayList<String> wordBank1; //the current words in the word bank
+    private ArrayList<String> wordBank2; //the current words in the word bank
+
     private String[][] gameBoard = new String[4][4]; //array of all the letters on the board
     private boolean[][] visited = new boolean[4][4];//tells weather a tile has been searched already
     private int[][] selectedLetters = new int[20][2]; //list of selected letters positions
@@ -170,7 +173,10 @@ public class BoggleState extends GameState {
            selectedLetters[k][0] = 4;
           selectedLetters[k][1] = 4;
         }
-        wordBank = new ArrayList<String>();  // human used words
+        wordBank1 = new ArrayList<String>();  // human used words
+        wordBank2 = new ArrayList<String>();
+
+
         compUsedWords = new ArrayList<String>(); //computer used words
     }
 
@@ -189,7 +195,20 @@ public class BoggleState extends GameState {
         curLetterCol = state.curLetterCol;
         secondsLeft = state.secondsLeft;
         gameOver = state.gameOver;
-        wordBank = state.wordBank;
+
+        for (int i = 0; i < state.getWordBank(0).size(); i++) {
+
+            wordBank1.add(state.wordBank1.get(i));
+        }
+
+
+        for (int i = 0; i < state.getWordBank(1).size(); i++) {
+
+            wordBank2.add(state.wordBank2.get(i));
+        }
+
+
+
         compUsedWords = state.compUsedWords;
         timer = state.timer;
         gameBoard = Arrays.copyOf(state.gameBoard, state.gameBoard.length);
@@ -226,8 +245,17 @@ public class BoggleState extends GameState {
     //NETWORK
     public String getCurrentWord(int playerNum) {return currentWord[playerNum];}
     public void setCurrentWord(String currentWord, int playerNum) {this.currentWord[playerNum] = currentWord;}
-    public ArrayList<String> getWordBank() {return wordBank;}
-    public void setWordBank(ArrayList<String> wordBank) {this.wordBank = wordBank;}
+    public ArrayList<String> getWordBank(int playerNum) {
+
+        if (playerNum == 0) {
+            return wordBank1;
+        }
+        else {
+            return wordBank2;
+        }
+    }
+//    public void setWordBank(ArrayList<String> wordBank) {
+//        this.wordBank = wordBank;}
     public HashSet<String> getDictionary(){return dictionary;}
     public int getGameOver(){return this.gameOver;}
     public void setGameOver(int gameOver) {this.gameOver = gameOver;}
@@ -564,8 +592,14 @@ public class BoggleState extends GameState {
     /**
      * @param word Adds a sumbitted correct word to the word bank
      */
-    public void addToWordBank(String word) {
+    public void addToWordBank(String word, int playerNum) {
         //Adds it to the arrayList
-        wordBank.add(word);
+
+        if (playerNum == 0) {
+            wordBank1.add(word);
+        }
+        else {
+            wordBank2.add(word);
+        }
     }
 }

@@ -85,10 +85,11 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                 letterDisplayTextView.setText("" + state.getCurrentWord(playerNum));
             }
 
-            for(int i = 0; i < state.getWordBank().size(); i++){
-                if(state.getWordBank().get(i) != null &&
-                        !usedWordsTextView.getText().toString().contains(state.getWordBank().get(i))) {
-                    usedWordsTextView.setText("" + state.getWordBank().get(i) +
+
+            for(int i = 0; i < state.getWordBank(playerNum).size(); i++){
+                if(state.getWordBank(playerNum).get(i) != null &&
+                        !usedWordsTextView.getText().toString().contains(state.getWordBank(playerNum).get(i))) {
+                    usedWordsTextView.setText("" + state.getWordBank(playerNum).get(i) +
                             "\n"+usedWordsTextView.getText());
                 }
             }
@@ -137,7 +138,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                     compWordTextView.setText("Opponents Words: \n");
 
                     for (int i = 0; i<state.getCompUsedWords().size(); i++) {
-                        if(state.getWordBank().contains(state.getCompUsedWords().get(i))) {
+                        if(state.getWordBank(playerNum).contains(state.getCompUsedWords().get(i))) {
                             int points = 0;
                             if(state.getCompUsedWords().get(i).length() == 3 || state.getCompUsedWords().get(i).length() == 4)
                             {

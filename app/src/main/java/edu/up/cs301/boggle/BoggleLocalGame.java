@@ -45,59 +45,21 @@ public class BoggleLocalGame extends LocalGame implements BoggleGame {
 	protected String checkIfGameOver() {
 
 
-		int p1Score = state.getPlayer1Score();
-		int p2Score = state.getPlayer2Score();
-
-		ArrayList<String> p1Words = state.getWordBank();
-		ArrayList<String> p2Words = state.getCompUsedWords();
-
-
-		ArrayList<String> sameWords = new ArrayList<String>();
-
-		for (int i = 0; i < p1Words.size(); i++) {
-			if (p2Words.contains(p1Words.get(i))) {
-				sameWords.add(p1Words.get(i));
-			}
-		}
-		String wordToModify;
-		for (int i = 0; i < sameWords.size(); i++) {
-			wordToModify = sameWords.get(i);
-			if (wordToModify.length() == 3 || wordToModify.length() == 4) {
-				p1Score = p1Score - 1;
-				p2Score = p2Score - 1;
-			}
-			else if (wordToModify.length() == 5) {
-				p1Score = p1Score - 2;
-				p2Score = p2Score - 2;
-			}
-			else if (wordToModify.length() == 6) {
-				p1Score = p1Score - 3;
-				p2Score = p2Score - 3;
-			}
-			else if (wordToModify.length() == 7) {
-				p1Score = p1Score - 4;
-				p2Score = p2Score - 4;
-			}
-			else if (wordToModify.length() >= 8) {
-				p1Score = p1Score - 5;
-				p2Score = p2Score - 5;
-			}
-		}
 		System.out.println("CHECKING IF GAME OVER" + state.getGameOver());
 		if(state.getGameOver() == 1){
 			int winner = state.getWinner();
 			String winTxt = "";
 
 			if (winner == 1) {
-				winTxt = "Game over! "+playerNames[0]+" wins with a score of "+p1Score+"!";
+				winTxt = "Game over! "+playerNames[0]+" wins with a score of "+state.getPlayer1Score()+"!";
 			}
 
 			else if (winner == 2) {
-				winTxt = "Game over! "+playerNames[1]+" wins with a score of "+p2Score+"!";
+				winTxt = "Game over! "+playerNames[1]+" wins with a score of "+state.getPlayer2Score()+"!";
 			}
 
 			else if (winner == 3) {
-				winTxt = "It's a draw! "+playerNames[0]+" and "+playerNames[1]+" tie with a score of "+p1Score+" each!";
+				winTxt = "It's a draw! "+playerNames[0]+" and "+playerNames[1]+" tie with a score of "+state.getPlayer1Score()+" each!";
 			}
 			return winTxt;
 		}
@@ -155,7 +117,7 @@ public class BoggleLocalGame extends LocalGame implements BoggleGame {
 			String word = BSSA.currentWord;
             //if word is more then 3 letters and in dictionary
 			if(state.wordLength(word)&&state.inDictionary(word)){
-				if (state.getWordBank().contains(word)) {
+				if (state.getWordBank(playerIdx).contains(word)) {
 					state.setCurrentWord("",playerIdx);
 					return false;
 				}
@@ -167,7 +129,7 @@ public class BoggleLocalGame extends LocalGame implements BoggleGame {
 					else{
 						state.setPlayer2Score(state.getPlayer2Score() + score);
 					}
-					state.addToWordBank(word);
+					state.addToWordBank(word, playerIdx);
 					state.setCurrentWord("", playerIdx);
 					int[][] selectedLetters = state.getSelectedLetters();
 
