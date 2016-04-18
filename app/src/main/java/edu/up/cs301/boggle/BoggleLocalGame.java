@@ -84,7 +84,7 @@ public class BoggleLocalGame extends LocalGame implements BoggleGame {
         if(action instanceof BoggleComputerSubmitScoreAction){
             BoggleComputerSubmitScoreAction BCSA = (BoggleComputerSubmitScoreAction)action;
             String word = BCSA.curWord(); //gets list of all possible words comp can use
-            state.setCompUsedWords(word); //puts the words used by the computer in array
+            state.setWordBank(word,playerIdx); //puts the words used by the computer in array
 			int score = state.compUpdateScore(word); //calculates the score for the word
             state.setPlayer2Score(score + state.getPlayer2Score()); //sets the comps score
             return true;

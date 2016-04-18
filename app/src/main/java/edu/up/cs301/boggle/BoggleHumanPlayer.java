@@ -75,11 +75,12 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                 opponentScoreNumberTextView.setText("" + state.getPlayer2Score());
                 letterDisplayTextView.setText("" + state.getCurrentWord(playerNum));
             }
-            else{
+            else if (this.playerNum == 1){
                 yourScoreNumberTextView.setText("" + state.getPlayer2Score());
                 opponentScoreNumberTextView.setText("" + state.getPlayer1Score());
                 letterDisplayTextView.setText("" + state.getCurrentWord(playerNum));
             }
+
 
 
             if (state.getWordBank(playerNum) != null) {

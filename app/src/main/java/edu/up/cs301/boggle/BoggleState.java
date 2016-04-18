@@ -276,8 +276,13 @@ public class BoggleState extends GameState {
             return wordBank2;
         }
     }
-//    public void setWordBank(ArrayList<String> wordBank) {
-//        this.wordBank = wordBank;}
+   public void setWordBank(String word, int playerNum) {
+       if (playerNum == 0) {
+           this.wordBank1.add(word);
+       } else {
+           this.wordBank2.add(word);
+       }
+   }
     public HashSet<String> getDictionary(){return dictionary;}
     public int getGameOver(){return this.gameOver;}
     public void setGameOver(int gameOver) {this.gameOver = gameOver;}
