@@ -31,7 +31,7 @@ public class BoggleComputerPlayer2 extends BoggleComputerPlayer1 {
 	}
 
 	protected int aiSmartness() {
-		return 15;
+		return 10;
 	}
 
 }

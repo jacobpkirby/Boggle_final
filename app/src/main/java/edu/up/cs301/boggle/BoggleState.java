@@ -257,7 +257,7 @@ public class BoggleState extends GameState {
 //    }
     public int getWinner() {
         if (getPlayer1Score() > getPlayer2Score()) {return 1;}
-        else if (getPlayer2Score()>getPlayer1Score()) {return 2;}
+        else if (getPlayer2Score() > getPlayer1Score()) {return 2;}
         else {return 3;}
     }
     public int getPlayer1Score() {return player1Score;}

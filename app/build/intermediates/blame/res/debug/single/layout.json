@@ -20,12 +20,12 @@
         "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\layout\\game_remote_tab.xml"
     },
     {
-        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_local_tab.xml",
-        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\layout\\game_local_tab.xml"
-    },
-    {
         "merged": "P:\\CS371\\Bogglefinal\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_config_main.xml",
         "source": "P:\\CS371\\Bogglefinal\\app\\src\\main\\res\\layout\\game_config_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\layout\\game_local_tab.xml",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\layout\\game_local_tab.xml"
     },
     {
         "merged": "P:\\CS371\\Bogglefinal\\app\\build\\intermediates\\res\\merged\\debug\\layout\\boggle_human_player.xml",
