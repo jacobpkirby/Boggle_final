@@ -1,15 +1,5 @@
 package edu.up.cs301.boggle;
 
-import android.app.Activity;
-import android.os.Handler;
-import android.util.Log;
-import android.widget.Button;
-import android.widget.TextView;
-
-import edu.up.cs301.game.GameMainActivity;
-import edu.up.cs301.game.R;
-import edu.up.cs301.game.infoMsg.GameInfo;
-
 /**
  * The Smart AI
  *

@@ -12,7 +12,7 @@ import java.util.Random;
 
 /**
  * The Dumb AI
- * 
+ *
  * @author Charles Rayner
  * @author Michael Waitt
  * @author Jacob Kirby
@@ -26,7 +26,8 @@ public class BoggleComputerPlayer1 extends GameComputerPlayer implements BoggleP
     ArrayList<String> found = null; // list of all the words found by the computer
     String builtWord; // the word that gets built from recursive method
     int index; //determines what position in the array of dictionary words we want to pull a word
-                //from.
+    //from.
+
     /**
      * constructor
      *
@@ -74,45 +75,49 @@ public class BoggleComputerPlayer1 extends GameComputerPlayer implements BoggleP
             }
             //if the index number is already at the end of the array just return, cannot sumbit
             //anymore words
-            if (index >= found.size()) {return;}
+            if (index >= found.size()) {
+                return;
+            }
 
             String word = found.get(index); // the word the computer will submit
             System.out.println(word);
             Random rand = new Random();
             int random = rand.nextInt(aiSmartness());
             System.out.println("Random Number: " + random);
-                if (random == 0) {
-                    submitScore = new BoggleComputerSubmitScoreAction(this, word);
-                    game.sendAction(submitScore);
-                    index++;
-                } else {
-                    return;
-                }
+            if (random == 0) {
+                submitScore = new BoggleComputerSubmitScoreAction(this, word);
+                game.sendAction(submitScore);
+                index++;
+            } else {
+                return;
             }
-            //}
-            return;
         }
+        //}
+        return;
+    }
 
-    protected int aiSmartness() {return 20;}
+    protected int aiSmartness() {
+        return 20;
+    }
 
 
     /**
      * This method recursively finds all the words on the board and puts them in an list "Found"
-     * @param dict
-     * @param board
-     * @param row
-     * @param col
-     * @param currWord
-     * @param visited
-     * @param found
+     *
+     * @param dict the dictionary being used
+     * @param board the board being searched
+     * @param row the row being searched
+     * @param col the column being searched
+     * @param currWord the current word being checked in the dictionary
+     * @param visited an array denoting which tiles have been visited
+     * @param found an arraylist of the found words
      */
     public void findWords(HashSet<String> dict, String[][] board, int row, int col, String currWord, boolean[][] visited, ArrayList<String> found) {
 
 
-        for (int x = row-1; x <= row+1 ; x++) {
-            for (int y = col-1; y <= col+1; y++) {
+        for (int x = row - 1; x <= row + 1; x++) {
+            for (int y = col - 1; y <= col + 1; y++) {
 
-//            if (row >= 0 && col >= 0) {
                 try {
                     if (visited[x][y]) continue;  //makes sure tile is not visited twice
                     visited[x][y] = true;
@@ -126,13 +131,13 @@ public class BoggleComputerPlayer1 extends GameComputerPlayer implements BoggleP
                     setFound(builtWord);
                 }
                 boolean[][] copy = new boolean[4][4]; // copy of visited tiles
-                for(int i = 0; i < 4; i++){
-                    for(int j = 0; j < 4; j++){
+                for (int i = 0; i < 4; i++) {
+                    for (int j = 0; j < 4; j++) {
                         copy[i][j] = visited[i][j];
                     }
                 }
                 ArrayList<String> copy2 = new ArrayList<String>(); //copy of found list
-                for(int i = 0; i< found.size(); i++){
+                for (int i = 0; i < found.size(); i++) {
                     copy2.add(found.get(i));
                 }
                 findWords(dict, board, x, y, builtWord, copy, copy2);
@@ -143,16 +148,25 @@ public class BoggleComputerPlayer1 extends GameComputerPlayer implements BoggleP
                  * Date: 3 April 2016
                  * Problem: Didn't know how to find all the words on the game board.
                  * Resource: Professor Nuxoll
-                 * Solution: Helped us write a recursive method to seach all paths on board
+                 * Solution: Helped us write a recursive method to search all paths on board
                  */
             }
         }
 
         return;
     }
-    public void setFound(String s){this.found.add(s);}
-    public ArrayList<String> getFound(){return found;}
-    public boolean[][] getVisited() {return visited;}
+
+    public ArrayList<String> getFound() {
+        return found;
+    }
+
+    public void setFound(String s) {
+        this.found.add(s);
+    }
+
+    public boolean[][] getVisited() {
+        return visited;
+    }
 }
 
 

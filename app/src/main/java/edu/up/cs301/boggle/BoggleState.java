@@ -2,10 +2,8 @@ package edu.up.cs301.boggle;
 
 
 import android.app.Activity;
-import android.util.Log;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -15,8 +13,6 @@ import java.util.HashSet;
 import java.util.Random;
 
 import edu.up.cs301.game.infoMsg.GameState;
-
-import static edu.up.cs301.boggle.BoggleHumanPlayer.*;
 
 /**
  * This is our Game State class. This is where all the methods are for Boggle to run.
@@ -28,32 +24,29 @@ import static edu.up.cs301.boggle.BoggleHumanPlayer.*;
  */
 public class BoggleState extends GameState {
 
+    private static HashSet<String> dictionary = null; //the dictionary of words
+    public int arrayIndex;//int for the index, used in the Local Game
     private int playerTurn; //tells which players turn it is
     private int player1Score; //tracks the score of player1
     private int player2Score; //tracks the score of player2
     //NETWORK
     private String[] currentWord = new String[2]; //the current word the player is making
     private boolean timer; //true if the timer is running, false if timer has stopped
-
     private ArrayList<String> wordBank1; //the current words in the word bank
     private ArrayList<String> wordBank2; //the current words in the word bank
-
     private String[][] gameBoard1 = new String[4][4]; //array of all the letters on the board
     private String[][] gameBoard2 = new String[4][4]; //array of all the letters on the board
-
     private boolean[][] visited = new boolean[4][4];//tells weather a tile has been searched already
     private int[][] selectedLetters = new int[20][2]; //list of selected letters positions
     private ArrayList<String> compUsedWords = new ArrayList<String>(); //list of all words computer uses in game
-    private static HashSet<String> dictionary = null; //the dictionary of words
     private String curLetter; //the current letter that is selected
     private int curLetterRow; //current row of letter selected
     private int curLetterCol;
     private int secondsLeft;  //tells how much time is left on the timer
     //private String compPrevWord = ""; //computer's previously played word
     private int gameOver; //determines if game is over
-    public int arrayIndex;//int for the index, used in the Local Game
 
-       /**
+    /**
      * The BoggleState constructor. The heart and soul of Boggle. Constructs the gameState of Boggle.
      */
     public BoggleState() {
@@ -68,7 +61,7 @@ public class BoggleState extends GameState {
         player1Score = 0;
         player2Score = 0;
         //NETWORK
-        for(int i = 0; i < 2; i++){
+        for (int i = 0; i < 2; i++) {
             currentWord[i] = "";
         }
         timer = true;
@@ -79,37 +72,37 @@ public class BoggleState extends GameState {
 
         //Assigns random letters to the tiles
         Random r1 = new Random();
-        char c1 = (char)(r1.nextInt(26) + 'A');
+        char c1 = (char) (r1.nextInt(26) + 'A');
         Random r2 = new Random();
-        char c2 = (char)(r2.nextInt(26) + 'A');
+        char c2 = (char) (r2.nextInt(26) + 'A');
         Random r3 = new Random();
-        char c3 = (char)(r3.nextInt(26) + 'A');
+        char c3 = (char) (r3.nextInt(26) + 'A');
         Random r4 = new Random();
-        char c4 = (char)(r4.nextInt(26) + 'A');
+        char c4 = (char) (r4.nextInt(26) + 'A');
         Random r5 = new Random();
-        char c5 = (char)(r5.nextInt(26) + 'A');
+        char c5 = (char) (r5.nextInt(26) + 'A');
         Random r6 = new Random();
-        char c6 = (char)(r6.nextInt(26) + 'A');
+        char c6 = (char) (r6.nextInt(26) + 'A');
         Random r7 = new Random();
-        char c7 = (char)(r7.nextInt(26) + 'A');
+        char c7 = (char) (r7.nextInt(26) + 'A');
         Random r8 = new Random();
-        char c8 = (char)(r8.nextInt(26) + 'A');
+        char c8 = (char) (r8.nextInt(26) + 'A');
         Random r9 = new Random();
-        char c9 = (char)(r9.nextInt(26) + 'A');
+        char c9 = (char) (r9.nextInt(26) + 'A');
         Random r10 = new Random();
-        char c10 = (char)(r10.nextInt(26) + 'A');
+        char c10 = (char) (r10.nextInt(26) + 'A');
         Random r11 = new Random();
-        char c11 = (char)(r11.nextInt(26) + 'A');
+        char c11 = (char) (r11.nextInt(26) + 'A');
         Random r12 = new Random();
-        char c12 = (char)(r12.nextInt(26) + 'A');
+        char c12 = (char) (r12.nextInt(26) + 'A');
         Random r13 = new Random();
-        char c13 = (char)(r13.nextInt(26) + 'A');
+        char c13 = (char) (r13.nextInt(26) + 'A');
         Random r14 = new Random();
-        char c14 = (char)(r14.nextInt(26) + 'A');
+        char c14 = (char) (r14.nextInt(26) + 'A');
         Random r15 = new Random();
-        char c15 = (char)(r15.nextInt(26) + 'A');
+        char c15 = (char) (r15.nextInt(26) + 'A');
         Random r16 = new Random();
-        char c16 = (char)(r16.nextInt(26) + 'A');
+        char c16 = (char) (r16.nextInt(26) + 'A');
 
         gameBoard1[0][0] = ("" + c1);
         gameBoard1[1][0] = ("" + c2);
@@ -137,27 +130,31 @@ public class BoggleState extends GameState {
             }
         }
         //forces some of the tiles to be vowels
-        double randomVowelDouble = Math.random()*5;
-        int randomVowelInt = (int)randomVowelDouble;
+        double randomVowelDouble = Math.random() * 5;
+        int randomVowelInt = (int) randomVowelDouble;
         if (randomVowelInt == 5) {
             randomVowelInt = 4;
         }
         String randomVowel = "";
         if (randomVowelInt == 0) {
             randomVowel = "A";
-        }else if (randomVowelInt == 1) {
+        } else if (randomVowelInt == 1) {
             randomVowel = "E";
-        }else if (randomVowelInt == 2) {
+        } else if (randomVowelInt == 2) {
             randomVowel = "I";
-        }else if (randomVowelInt == 3) {
+        } else if (randomVowelInt == 3) {
             randomVowel = "O";
-        }else if (randomVowelInt == 4) {
+        } else if (randomVowelInt == 4) {
             randomVowel = "U";
         }
-        int randomRow = (int)(Math.random()*4);
-        if (randomRow == 4) {randomRow = 3;}
-        int randomCol = (int)(Math.random()*4);
-        if (randomCol == 4) {randomCol = 3;}
+        int randomRow = (int) (Math.random() * 4);
+        if (randomRow == 4) {
+            randomRow = 3;
+        }
+        int randomCol = (int) (Math.random() * 4);
+        if (randomCol == 4) {
+            randomCol = 3;
+        }
         int vowelCount = 0;
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
@@ -171,9 +168,9 @@ public class BoggleState extends GameState {
             gameBoard1[randomRow][randomCol] = randomVowel;
         }
         //sets all the selected letters to null at start of game
-       for (int k = 0; k < 20; k++) {
-           selectedLetters[k][0] = 4;
-          selectedLetters[k][1] = 4;
+        for (int k = 0; k < 20; k++) {
+            selectedLetters[k][0] = 4;
+            selectedLetters[k][1] = 4;
         }
         wordBank1 = new ArrayList<String>();  // human used words
         wordBank2 = new ArrayList<String>();
@@ -214,113 +211,164 @@ public class BoggleState extends GameState {
         }
 
 
-
         compUsedWords = state.compUsedWords;
         timer = state.timer;
         gameBoard1 = Arrays.copyOf(state.gameBoard1, state.gameBoard1.length);
         gameBoard2 = Arrays.copyOf(state.gameBoard2, state.gameBoard2.length);
-        visited = Arrays.copyOf(state.visited,state.gameBoard1.length);
+        visited = Arrays.copyOf(state.visited, state.gameBoard1.length);
         selectedLetters = Arrays.copyOf(state.selectedLetters, state.selectedLetters.length);
         //compPrevWord = state.compPrevWord;
         //NETWORK
         this.currentWord = new String[2];
-        for(int i = 0; i < 2;i ++){
-            this.currentWord[i]= state.currentWord[i];
+        for (int i = 0; i < 2; i++) {
+            this.currentWord[i] = state.currentWord[i];
         }
     }
 
     //--------------------------- Getter/Setter End -----------------------------
 
 
-    public boolean isTimer() {return timer;}
-    public ArrayList<String> getCompUsedWords() {return compUsedWords;}
-    public void setCompUsedWords(String word){compUsedWords.add(word);}
-    public void setTimer(boolean timer) {this.timer = timer;}
+    public boolean isTimer() {
+        return timer;
+    }
+
+    public void setTimer(boolean timer) {
+        this.timer = timer;
+    }
+
+    public ArrayList<String> getCompUsedWords() {
+        return compUsedWords;
+    }
+
+    public void setCompUsedWords(String word) {
+        compUsedWords.add(word);
+    }
+
     public String[][] getGameBoard(int playerNum) {
 
         if (playerNum == 0) {
             return Arrays.copyOf(gameBoard1, gameBoard1.length);
-        }
-        else {
+        } else {
             return Arrays.copyOf(gameBoard2, gameBoard2.length);
         }
     }
-//    public void setGameBoard(String[][] gameBoard, int playerNum){
-//        if (playerNum == 0) {
-//            this.gameBoard1 = Arrays.copyOf(gameBoard1, gameBoard.length);
-//        }
-//        else {
-//            return Arrays.copyOf(gameBoard2, gameBoard2.length);
-//        }
-//
-//
-//    }
+
     public int getWinner() {
-        if (getPlayer1Score() > getPlayer2Score()) {return 1;}
-        else if (getPlayer2Score() > getPlayer1Score()) {return 2;}
-        else {return 3;}
+        if (getPlayer1Score() > getPlayer2Score()) {
+            return 1;
+        } else if (getPlayer2Score() > getPlayer1Score()) {
+            return 2;
+        } else {
+            return 3;
+        }
     }
-    public int getPlayer1Score() {return player1Score;}
-    public void setPlayer1Score(int player1Score) {this.player1Score = player1Score;}
-    public int getPlayer2Score() {return player2Score;}
-    public void setPlayer2Score(int player2Score) {this.player2Score = player2Score;}
+
+    public int getPlayer1Score() {
+        return player1Score;
+    }
+
+    public void setPlayer1Score(int player1Score) {
+        this.player1Score = player1Score;
+    }
+
+    public int getPlayer2Score() {
+        return player2Score;
+    }
+
+    public void setPlayer2Score(int player2Score) {
+        this.player2Score = player2Score;
+    }
+
     //NETWORK
-    public String getCurrentWord(int playerNum) {return currentWord[playerNum];}
-    public void setCurrentWord(String currentWord, int playerNum) {this.currentWord[playerNum] = currentWord;}
+    public String getCurrentWord(int playerNum) {
+        return currentWord[playerNum];
+    }
+
+    public void setCurrentWord(String currentWord, int playerNum) {
+        this.currentWord[playerNum] = currentWord;
+    }
+
     public ArrayList<String> getWordBank(int playerNum) {
 
         if (playerNum == 0) {
             return wordBank1;
-        }
-        else {
+        } else {
             return wordBank2;
         }
     }
-   public void setWordBank(String word, int playerNum) {
-       if (playerNum == 0) {
-           this.wordBank1.add(word);
-       } else {
-           this.wordBank2.add(word);
-       }
-   }
-    public HashSet<String> getDictionary(){return dictionary;}
-    public int getGameOver(){return this.gameOver;}
-    public void setGameOver(int gameOver) {this.gameOver = gameOver;}
+
+    public void setWordBank(String word, int playerNum) {
+        if (playerNum == 0) {
+            this.wordBank1.add(word);
+        } else {
+            this.wordBank2.add(word);
+        }
+    }
+
+    public HashSet<String> getDictionary() {
+        return dictionary;
+    }
+
+    public int getGameOver() {
+        return this.gameOver;
+    }
+
+    public void setGameOver(int gameOver) {
+        this.gameOver = gameOver;
+    }
+
     public int[][] getSelectedLetters() {
         return Arrays.copyOf(selectedLetters, selectedLetters.length);
     }
-      public void setSelectedLetters(int[][] selectedLetters){
+
+    public void setSelectedLetters(int[][] selectedLetters) {
         this.selectedLetters = Arrays.copyOf(selectedLetters, selectedLetters.length);
     }
-    public int getSecondsLeft() {return secondsLeft;}
-    public void setSecondsLeft(int seconds) {this.secondsLeft = seconds;}
+
+    public int getSecondsLeft() {
+        return secondsLeft;
+    }
+
+    public void setSecondsLeft(int seconds) {
+        this.secondsLeft = seconds;
+    }
+
     public String getCurLetterFromBoard(int curLetterRow, int curLetterCol, String[][] gameBoard) {
         return gameBoard[curLetterRow][curLetterCol];
     }
+
     public String getCurLetter() {
         return curLetter;
     }
+
     public void setCurLetter(String curLetter) {
         this.curLetter = curLetter;
     }
+
     public int getCurLetterRow() {
         return curLetterRow;
     }
-    public int getCurLetterCol() {
-        return curLetterCol;
-    }
+
     public void setCurLetterRow(int curLetterRow) {
         this.curLetterRow = curLetterRow;
     }
+
+    public int getCurLetterCol() {
+        return curLetterCol;
+    }
+
     public void setCurLetterCol(int curLetterCol) {
         this.curLetterCol = curLetterCol;
     }
-    public int getLastLetterCol(int [][] selectedLetters) {
+
+    public int getLastLetterCol(int[][] selectedLetters) {
         return selectedLetters[getLastLetterIndex(selectedLetters)][1];
     }
-    public int getLastLetterRow(int [][] selectedLetters) {
+
+    public int getLastLetterRow(int[][] selectedLetters) {
         return selectedLetters[getLastLetterIndex(selectedLetters)][0];
     }
+
     public int getLastLetterIndex(int[][] selectedLetters) {
         int counter = 0;
         while (selectedLetters[counter + 1][0] != 4) {
@@ -329,6 +377,7 @@ public class BoggleState extends GameState {
         return counter;
     }
 //--------------------------- End Getter/Setter End -----------------------------
+
     /**
      * Determines if the word is more then 3 letters, which means its playable
      *
@@ -367,12 +416,12 @@ public class BoggleState extends GameState {
     public boolean inDictionary(String word) throws IOException {
         BufferedReader reader;
         word = word.toLowerCase();
-        if(dictionary == null){
+        if (dictionary == null) {
             dictionary = new HashSet<String>();
             int count = 0;
             try {
                 Activity myActivity = BoggleMainActivity.activity;
-                InputStream ins = myActivity.getResources().openRawResource(myActivity.getResources().getIdentifier("words","raw", myActivity.getPackageName()));
+                InputStream ins = myActivity.getResources().openRawResource(myActivity.getResources().getIdentifier("words", "raw", myActivity.getPackageName()));
                 reader = new BufferedReader(new InputStreamReader(ins));
                 String line;
 
@@ -380,8 +429,7 @@ public class BoggleState extends GameState {
                     dictionary.add(line.toLowerCase());
                     count++;
                 }
-            }
-            catch(IOException e){
+            } catch (IOException e) {
                 return false;
             }
         }
@@ -415,8 +463,7 @@ public class BoggleState extends GameState {
 
         if (curLetterRow == lastLetterRow && curLetterCol == lastLetterCol) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
@@ -437,27 +484,37 @@ public class BoggleState extends GameState {
         selectedLetters[index + 1][1] = curLetterCol;
     }
 
+    /**
+     * adds letter to word
+     *
+     * @param currentWord the word to add to
+     * @param letter      letter to add to end of word
+     * @return currentWord    the resulting word
+     */
     public String addToWord(String currentWord, String letter) {
 
         if (currentWord.length() == 0 || currentWord == null) {
             currentWord = letter;
-        }
-        else if (currentWord.length() > 0) {
+        } else if (currentWord.length() > 0) {
             currentWord = currentWord.concat(letter);
         }
         return currentWord;
 
     }
 
+    /**
+     * removes letter from word
+     *
+     * @param currentWord
+     */
     public String removeFromWord(String currentWord) {
-        if(currentWord == ""){
+        if (currentWord == "") {
             return "";
         }
         String lastLetter = currentWord.substring(currentWord.length() - 1);
         if (currentWord.length() > 0 && !lastLetter.equals("u")) {
             currentWord = currentWord.substring(0, currentWord.length() - 1);
-        }
-        else if (currentWord.length() > 0 && lastLetter.equals("u")) {
+        } else if (currentWord.length() > 0 && lastLetter.equals("u")) {
             currentWord = currentWord.substring(0, currentWord.length() - 2);
         }
         return currentWord;
@@ -476,10 +533,9 @@ public class BoggleState extends GameState {
     public Boolean canAdd(int[][] selectedLetters, int curLetterRow, int curLetterCol,
                           int lastLetterRow, int lastLetterCol) {
 
-        if (getLastLetterRow(selectedLetters) == 4 ) {
+        if (getLastLetterRow(selectedLetters) == 4) {
             return true;
-        }
-        else if (isCurrentAdjacentToLast
+        } else if (isCurrentAdjacentToLast
                 (lastLetterRow, lastLetterCol, curLetterRow, curLetterCol) == 1) {
 
             return true;
@@ -502,7 +558,7 @@ public class BoggleState extends GameState {
      *
      * @param word the word the user has submitted
      */
-       public int updateScore(String word) {
+    public int updateScore(String word) {
         int score = 0;
 
         //Check to see how long the word is
@@ -530,6 +586,8 @@ public class BoggleState extends GameState {
 
     /**
      * METHOD ONLY USED FOR AI
+     *
+     * @return
      * @p * Updates the score based on the length of the word entered
      * Words of size 3 and 4 = 1 point
      * 5 = 2 points
@@ -537,9 +595,8 @@ public class BoggleState extends GameState {
      * 7 = 5 points
      * 8 or more = 11 points
      * Param word
-     * @return
      */
-    public int compUpdateScore(String word){
+    public int compUpdateScore(String word) {
         int score = 0;
 
         //Check to see how long the word is
@@ -556,6 +613,7 @@ public class BoggleState extends GameState {
         }
         return score;
     }
+
     /**
      * Rotates the board
      *
@@ -581,8 +639,7 @@ public class BoggleState extends GameState {
         //Copies the rotated board to the existing board
         if (playerNum == 0) {
             gameBoard1 = tmp;
-        }
-        else {
+        } else {
             gameBoard2 = tmp;
         }
     }
@@ -633,8 +690,7 @@ public class BoggleState extends GameState {
 
         if (playerNum == 0) {
             wordBank1.add(word);
-        }
-        else {
+        } else {
             wordBank2.add(word);
         }
     }
