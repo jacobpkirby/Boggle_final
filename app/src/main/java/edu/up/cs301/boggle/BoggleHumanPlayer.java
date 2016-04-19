@@ -27,31 +27,29 @@ import edu.up.cs301.game.infoMsg.GameInfo;
  * @version March 2016
  */
 public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, OnClickListener {
-    // the most recent game state, as given to us by the CounterLocalGame
-    private BoggleState state;
-    Boolean chosen = false;
-
-    // The TextViews that displays the current counter value
-    protected TextView letterDisplayTextView, timer, yourScoreNumberTextView, usedWordsTextView,
-            opponentScoreNumberTextView,compWordTextView;
-    public static String buttonLetter;
-
-
+    //The booleans for whether or not a button has been pushed
     public static Boolean tile1ButtonPushed, tile2ButtonPushed, tile3ButtonPushed, tile4ButtonPushed,
             tile5ButtonPushed, tile6ButtonPushed, tile7ButtonPushed, tile8ButtonPushed,
             tile9ButtonPushed, tile10ButtonPushed, tile11ButtonPushed, tile12ButtonPushed,
             tile13ButtonPushed, tile14ButtonPushed, tile15ButtonPushed, tile16ButtonPushed;
-    BoggleTimerOutAction gameOver;
+    // The TextViews that displays the current counter value
+    protected TextView letterDisplayTextView, timer, yourScoreNumberTextView, usedWordsTextView,
+            opponentScoreNumberTextView, compWordTextView;
+    //Buttons on the gameboard
     protected Button tile1Button, tile2Button, tile3Button, tile4Button, tile5Button, tile6Button,
             tile7Button, tile8Button, tile9Button, tile10Button, tile11Button, tile12Button, tile13Button,
             tile14Button, tile15Button, tile16Button, rotateButton, submitScoreButton;
-
+    Boolean chosen = false;
+    BoggleTimerOutAction gameOver;
+    // the most recent game state, as given to us by the CounterLocalGame
+    private BoggleState state;
     // the android activity that we are running
     private GameMainActivity myActivity;
 
 
     /**
      * constructor
+     *
      * @param name the name of a player
      */
     public BoggleHumanPlayer(String name) {
@@ -62,47 +60,46 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
         return myActivity.findViewById(R.id.AppLayout);
     }
 
+    /**
+     * receiveInfo
+     * called once a second, checks what on the state needs to be updated, updates it
+     *
+     * @param info the info of the state being updated
+     */
     @Override
     public void receiveInfo(GameInfo info) {
-
+        //if the info is in regard to a bogglestate
         if (info instanceof BoggleState) {
 
             chosen = true;
             state = (BoggleState) info;
-            int[][] selectedLetters = state.getSelectedLetters();
-            if(this.playerNum == 0) {
+            if (this.playerNum == 0) {
+                //Updates the scores and wordbanks accordingly
                 yourScoreNumberTextView.setText("" + state.getPlayer1Score());
                 opponentScoreNumberTextView.setText("" + state.getPlayer2Score());
                 letterDisplayTextView.setText("" + state.getCurrentWord(playerNum));
-            }
-            else if (this.playerNum == 1){
+            } else if (this.playerNum == 1) {
+                //Updates the scores and wordbanks accordingly
                 yourScoreNumberTextView.setText("" + state.getPlayer2Score());
                 opponentScoreNumberTextView.setText("" + state.getPlayer1Score());
                 letterDisplayTextView.setText("" + state.getCurrentWord(playerNum));
             }
 
 
-
             if (state.getWordBank(playerNum) != null) {
                 for (int i = 0; i < state.getWordBank(playerNum).size(); i++) {
                     if (state.getWordBank(playerNum).get(i) != null &&
                             !usedWordsTextView.getText().toString().contains(state.getWordBank(playerNum).get(i))) {
+                        //prints the word bank into the scrollview
                         usedWordsTextView.setText("" + state.getWordBank(playerNum).get(i) +
                                 "\n" + usedWordsTextView.getText());
                     }
                 }
             }
-//            if (!(state.getCompCurWord().equals(state.getCompPrevWord()))) {
-//                compWordTextView.setText("" + state.getCompCurWord() + "\n" + compWordTextView.getText());
-//                state.getWordBank(1).add(state.getCompCurWord());
-//                state.setCompPrevWord(state.getCompCurWord());
-//                state.setCompCurWord("");
-//            }
 
-            String[][] gameBoard = state.getGameBoard(playerNum);
-            int seconds1 = state.getSecondsLeft();
+            String[][] gameBoard = state.getGameBoard(playerNum); //gameboard gets updated
 
-
+            //Sets the text of each letter
             tile1Button.setText(state.getCurLetterFromBoard(0, 0, gameBoard));
             tile2Button.setText(state.getCurLetterFromBoard(1, 0, gameBoard));
             tile3Button.setText(state.getCurLetterFromBoard(2, 0, gameBoard));
@@ -120,42 +117,50 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             tile15Button.setText(state.getCurLetterFromBoard(2, 3, gameBoard));
             tile16Button.setText(state.getCurLetterFromBoard(3, 3, gameBoard));
 
-            String seconds = ""+state.getSecondsLeft() % 60;
-            String minutes = ""+state.getSecondsLeft() / 60;
-            if (seconds.length()<2) {
-                seconds = "0"+seconds;
+            //TIMER OPERATIONS
+            String seconds = "" + state.getSecondsLeft() % 60;
+            String minutes = "" + state.getSecondsLeft() / 60;
+            if (seconds.length() < 2) {
+                seconds = "0" + seconds; //if seconds is single digit, add a 0
             }
 
-            String time = (minutes + ":" + seconds);
-            timer.setText(time);
-//            if (!state.isTimer()) {
-//                state.setGameOver(1);
-//            }
+            String time = (minutes + ":" + seconds); //set time
+            timer.setText(time); //print time
 
-            if(state.getSecondsLeft() == 0) {
+            //GAME OVER OPERATIONS
+            if (state.getSecondsLeft() == 0) {
                 compWordTextView.setText("Opponents Words: \n");
                 if (playerNum == 0) {
+                    //Print the opponent's list of words
                     for (int i = 0; i < state.getWordBank(1).size(); i++) {
-                    if (state.getWordBank(0).contains(state.getWordBank(1).get(i))) {
-                        int points = 0;
-                        if (state.getWordBank(1).get(i).length() == 3 || state.getWordBank(1).get(i).length() == 4) {
-                            points = 1;
-                        } else if (state.getWordBank(1).get(i).length() == 5) {points = 2;
-                        } else if (state.getWordBank(1).get(i).length() == 6) {points = 3;
-                        } else if (state.getWordBank(1).get(i).length() == 7) {points = 5;
-                        } else if (state.getWordBank(1).get(i).length() >= 8) {points = 11;
-                        }
-                        compWordTextView.append(state.getWordBank(1).get(i) +
-                                "      -" + points + "\n");
+                        if (state.getWordBank(0).contains(state.getWordBank(1).get(i))) {
+                            int points = 0;
+                            if (state.getWordBank(1).get(i).length() == 3 || state.getWordBank(1).get(i).length() == 4) {
+                                points = 1;
+                            } else if (state.getWordBank(1).get(i).length() == 5) {
+                                points = 2;
+                            } else if (state.getWordBank(1).get(i).length() == 6) {
+                                points = 3;
+                            } else if (state.getWordBank(1).get(i).length() == 7) {
+                                points = 5;
+                            } else if (state.getWordBank(1).get(i).length() >= 8) {
+                                points = 11;
+                            }
+                            //print point corrections next to each word
+                            compWordTextView.append(state.getWordBank(1).get(i) +
+                                    "      -" + points + "\n");
+                            //adjust the points for each player
                             yourScoreNumberTextView.setText("" + (state.getPlayer1Score() - points));
                             opponentScoreNumberTextView.setText("" + (state.getPlayer2Score() - points));
-                    } else {
-                        compWordTextView.append(state.getWordBank(1).get(i) + "\n");
+                        } else {
+                            //Just print a word
+                            compWordTextView.append(state.getWordBank(1).get(i) + "\n");
+                        }
                     }
-                }
-            } else {
+                } else {
                     for (int i = 0; i < state.getWordBank(0).size(); i++) {
                         if (state.getWordBank(1).contains(state.getWordBank(0).get(i))) {
+                            //Print the opponent's list of words
                             int points = 0;
                             if (state.getWordBank(0).get(i).length() == 3 || state.getWordBank(0).get(i).length() == 4) {
                                 points = 1;
@@ -168,14 +173,18 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                             } else if (state.getWordBank(0).get(i).length() >= 8) {
                                 points = 11;
                             }
+                            //print point corrections next to each word
                             compWordTextView.append(state.getWordBank(0).get(i) + "      -" + points + "\n");
-                                yourScoreNumberTextView.setText("" + (state.getPlayer2Score() - points));
-                                opponentScoreNumberTextView.setText("" + (state.getPlayer1Score() - points));
+                            //adjust the points for each player
+                            yourScoreNumberTextView.setText("" + (state.getPlayer2Score() - points));
+                            opponentScoreNumberTextView.setText("" + (state.getPlayer1Score() - points));
                         } else {
+                            //Just print a word
                             compWordTextView.append(state.getWordBank(0).get(i) + "\n");
                         }
                     }
                 }
+                //set all buttons to unclickable when game is over
                 submitScoreButton.setEnabled(false);
                 rotateButton.setEnabled(false);
                 tile1Button.setEnabled(false);
@@ -195,7 +204,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                 tile15Button.setEnabled(false);
                 tile16Button.setEnabled(false);
 
-
+                //declare timeroutaction
                 gameOver = new BoggleTimerOutAction(this);
                 game.sendAction(gameOver);
 
@@ -205,6 +214,12 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 
     }
 
+    /**
+     * setAsGui
+     * Constructs the GUI
+     *
+     * @param activity the activity
+     */
     public void setAsGui(GameMainActivity activity) {
 
         // remember the activity
@@ -229,6 +244,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             receiveInfo(state);
             gameBoard = state.getGameBoard(playerNum);
         }
+        //set all buttons to unpushed
         tile1ButtonPushed = false;
         tile2ButtonPushed = false;
         tile3ButtonPushed = false;
@@ -246,7 +262,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
         tile15ButtonPushed = false;
         tile16ButtonPushed = false;
 
-
+        //----------------------BUTTON DECLARATIONS-----------------------//
         tile1Button = (Button) activity.findViewById(R.id.tile1Button);
         tile1Button.setOnClickListener(this);
 
@@ -314,36 +330,43 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
         submitScoreButton = (Button) activity.findViewById(R.id.submitScoreButton);
         submitScoreButton.setOnClickListener(this);
 
+        rotateButton = (Button) activity.findViewById(R.id.rotateBackwardButton);
+        rotateButton.setOnClickListener(this);
+
+        //-------------------------TEXTVIEWS--------------------------//
         yourScoreNumberTextView = (TextView) activity.findViewById(R.id.yourScoreNumberTextView);
         letterDisplayTextView = (TextView) activity.findViewById(R.id.letterDisplayTextView);
         opponentScoreNumberTextView = (TextView) activity.findViewById(R.id.opponentScoreNumberTextView);
         compWordTextView = (TextView) activity.findViewById((R.id.compWordTextView));
-        rotateButton = (Button) activity.findViewById(R.id.rotateBackwardButton);
-        rotateButton.setOnClickListener(this);
-
         timer = (TextView) activity.findViewById(R.id.timerText);
-        usedWordsTextView = (TextView)activity.findViewById(R.id.usedWordsTextView);
+        usedWordsTextView = (TextView) activity.findViewById(R.id.usedWordsTextView);
     }
 
-
+    /**
+     * onClick
+     * Says what to do in event of a click
+     *
+     * @param v the View being clicked
+     */
     public void onClick(View v) {
+        //ACTION DECLARATIONS
         BoggleSelectTileAction select;
         BoggleDeSelectTileAction deSelect;
         BoggleSubmitScoreAction submitScore;
         BoggleRotateAction rotateAction;
 
-        if(this.state == null){
-            return;
+        if (this.state == null) {
+            return; //return if null, cant deal with that
         }
 
+        //Assignments
         int[][] selectedLetters = state.getSelectedLetters();
         int lastLetterRow = state.getLastLetterRow(selectedLetters);
         int lastLetterCol = state.getLastLetterCol(selectedLetters);
         String currentWord = state.getCurrentWord(playerNum);
-
         String[][] gameBoard = state.getGameBoard(playerNum);
 
-
+        //
         if (v == tile1Button && !tile1ButtonPushed) {
             int curLetterRow = 0;
             int curLetterCol = 0;
@@ -354,7 +377,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile1Button.setBackgroundColor(0x86090404);
                 tile1ButtonPushed = true;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
@@ -372,7 +395,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile1Button.setBackgroundResource(R.mipmap.wood1);
                 tile1ButtonPushed = false;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
@@ -390,7 +413,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile2Button.setBackgroundColor(0x86090404);
                 tile2ButtonPushed = true;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
@@ -408,7 +431,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile2Button.setBackgroundResource(R.mipmap.wood1);
                 tile2ButtonPushed = false;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
@@ -426,7 +449,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile3Button.setBackgroundColor(0x86090404);
                 tile3ButtonPushed = true;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
@@ -444,7 +467,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile3Button.setBackgroundResource(R.mipmap.wood1);
                 tile3ButtonPushed = false;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
@@ -463,7 +486,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile4Button.setBackgroundColor(0x86090404);
                 tile4ButtonPushed = true;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
@@ -481,7 +504,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile4Button.setBackgroundResource(R.mipmap.wood1);
                 tile4ButtonPushed = false;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
@@ -499,7 +522,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile5Button.setBackgroundColor(0x86090404);
                 tile5ButtonPushed = true;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
@@ -517,7 +540,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile5Button.setBackgroundResource(R.mipmap.wood1);
                 tile5ButtonPushed = false;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
@@ -550,7 +573,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile6Button.setBackgroundResource(R.mipmap.wood1);
                 tile6ButtonPushed = false;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
@@ -568,7 +591,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile7Button.setBackgroundColor(0x86090404);
                 tile7ButtonPushed = true;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
@@ -586,7 +609,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile7Button.setBackgroundResource(R.mipmap.wood1);
                 tile7ButtonPushed = false;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
@@ -604,7 +627,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile8Button.setBackgroundColor(0x86090404);
                 tile8ButtonPushed = true;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
@@ -622,7 +645,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile8Button.setBackgroundResource(R.mipmap.wood1);
                 tile8ButtonPushed = false;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
@@ -640,7 +663,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile9Button.setBackgroundColor(0x86090404);
                 tile9ButtonPushed = true;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
@@ -658,7 +681,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile9Button.setBackgroundResource(R.mipmap.wood1);
                 tile9ButtonPushed = false;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
@@ -676,7 +699,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile10Button.setBackgroundColor(0x86090404);
                 tile10ButtonPushed = true;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
@@ -694,7 +717,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile10Button.setBackgroundResource(R.mipmap.wood1);
                 tile10ButtonPushed = false;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
@@ -712,7 +735,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile11Button.setBackgroundColor(0x86090404);
                 tile11ButtonPushed = true;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
@@ -730,7 +753,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile11Button.setBackgroundResource(R.mipmap.wood1);
                 tile11ButtonPushed = false;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
@@ -748,7 +771,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile12Button.setBackgroundColor(0x86090404);
                 tile12ButtonPushed = true;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
@@ -766,7 +789,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile12Button.setBackgroundResource(R.mipmap.wood1);
                 tile12ButtonPushed = false;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
@@ -784,7 +807,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile13Button.setBackgroundColor(0x86090404);
                 tile13ButtonPushed = true;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
@@ -802,7 +825,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile13Button.setBackgroundResource(R.mipmap.wood1);
                 tile13ButtonPushed = false;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
@@ -820,7 +843,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile14Button.setBackgroundColor(0x86090404);
                 tile14ButtonPushed = true;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
@@ -838,7 +861,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile14Button.setBackgroundResource(R.mipmap.wood1);
                 tile14ButtonPushed = false;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
@@ -856,7 +879,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile15Button.setBackgroundColor(0x86090404);
                 tile15ButtonPushed = true;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
@@ -874,7 +897,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile15Button.setBackgroundResource(R.mipmap.wood1);
                 tile15ButtonPushed = false;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
@@ -892,7 +915,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile16Button.setBackgroundColor(0x86090404);
                 tile16ButtonPushed = true;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
@@ -910,7 +933,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile16Button.setBackgroundResource(R.mipmap.wood1);
                 tile16ButtonPushed = false;
-                if(chosen) {
+                if (chosen) {
                     chosen = false;
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
@@ -923,14 +946,11 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 
         if (v == submitScoreButton) {
             try {
-                if (state.getCurrentWord(playerNum).length()<3) {
+                if (state.getCurrentWord(playerNum).length() < 3) {
                     Toast.makeText(myActivity, "Entered Word Is Too Short!", Toast.LENGTH_SHORT).show();
-                }
-
-                else if ((state.getCurrentWord(playerNum).length()>=3) && (!state.inDictionary(state.getCurrentWord(playerNum)))) {
+                } else if ((state.getCurrentWord(playerNum).length() >= 3) && (!state.inDictionary(state.getCurrentWord(playerNum)))) {
                     Toast.makeText(myActivity, "Entered Word Is Not In Dictionary!", Toast.LENGTH_SHORT).show();
-                }
-                else if (state.getWordBank(playerNum).contains(state.getCurrentWord(playerNum))) {
+                } else if (state.getWordBank(playerNum).contains(state.getCurrentWord(playerNum))) {
                     Toast.makeText(myActivity, "Entered Word Has Been Previously Entered!", Toast.LENGTH_SHORT).show();
                 }
             } catch (IOException e) {
@@ -940,10 +960,10 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             game.sendAction(submitScore);
 
             for (int i = 0; i < 20; i++) {
-               selectedLetters[i][0] = 4;
-               selectedLetters[i][1] = 4;
+                selectedLetters[i][0] = 4;
+                selectedLetters[i][1] = 4;
 
-           }
+            }
             state.setSelectedLetters(selectedLetters);
             tile1Button.setBackgroundResource(R.mipmap.wood1);
             tile2Button.setBackgroundResource(R.mipmap.wood1);
@@ -984,13 +1004,12 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
         if (v == rotateButton) {
             if (!tile1ButtonPushed && !tile2ButtonPushed && !tile3ButtonPushed && !tile4ButtonPushed &&
                     !tile5ButtonPushed && !tile6ButtonPushed && !tile7ButtonPushed && !tile8ButtonPushed &&
-                            !tile9ButtonPushed && !tile10ButtonPushed && !tile11ButtonPushed && !tile12ButtonPushed &&
-                                    !tile13ButtonPushed && !tile14ButtonPushed && !tile15ButtonPushed &&
-                                            !tile16ButtonPushed) {
+                    !tile9ButtonPushed && !tile10ButtonPushed && !tile11ButtonPushed && !tile12ButtonPushed &&
+                    !tile13ButtonPushed && !tile14ButtonPushed && !tile15ButtonPushed &&
+                    !tile16ButtonPushed) {
                 rotateAction = new BoggleRotateAction(this);
                 game.sendAction(rotateAction);
-            }
-            else {
+            } else {
                 Toast.makeText(myActivity, "Cannot Rotate While Letters Are Selected", Toast.LENGTH_SHORT).show();
             }
         }
