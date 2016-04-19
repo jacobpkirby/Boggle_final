@@ -366,7 +366,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
         String currentWord = state.getCurrentWord(playerNum);
         String[][] gameBoard = state.getGameBoard(playerNum);
 
-        //
+        //Checks if the button can be pushed, if it can be, it changes the color of the button,
+        // and adds it to the textview
         if (v == tile1Button && !tile1ButtonPushed) {
             int curLetterRow = 0;
             int curLetterCol = 0;
@@ -385,7 +386,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                 }
 
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile1Button && tile1ButtonPushed) {
             int curLetterRow = 0;
             int curLetterCol = 0;
@@ -403,7 +405,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                 }
 
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile2Button && !tile2ButtonPushed) {
             int curLetterRow = 1;
             int curLetterCol = 0;
@@ -421,7 +424,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                 }
 
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile2Button && tile2ButtonPushed) {
             int curLetterRow = 1;
             int curLetterCol = 0;
@@ -439,7 +443,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                 }
 
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile3Button && !tile3ButtonPushed) {
             int curLetterRow = 2;
             int curLetterCol = 0;
@@ -457,7 +462,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                 }
 
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile3Button && tile3ButtonPushed) {
             int curLetterRow = 2;
             int curLetterCol = 0;
@@ -476,7 +482,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 
             }
 
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile4Button && !tile4ButtonPushed) {
             int curLetterRow = 3;
             int curLetterCol = 0;
@@ -494,7 +501,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                 }
 
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile4Button && tile4ButtonPushed) {
             int curLetterRow = 3;
             int curLetterCol = 0;
@@ -512,7 +520,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                 }
 
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile5Button && !tile5ButtonPushed) {
             int curLetterRow = 0;
             int curLetterCol = 1;
@@ -530,7 +539,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 
                 }
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile5Button && tile5ButtonPushed) {
             int curLetterRow = 0;
             int curLetterCol = 1;
@@ -548,7 +558,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                 }
 
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile6Button && !tile6ButtonPushed) {
             int curLetterRow = 1;
             int curLetterCol = 1;
@@ -563,7 +574,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                 state.addLetter(currentWord, selectedLetters, curLetterRow, curLetterCol, gameBoard[curLetterRow][curLetterCol]);
 
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile6Button && tile6ButtonPushed) {
             int curLetterRow = 1;
             int curLetterCol = 1;
@@ -581,7 +593,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                 }
 
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile7Button && !tile7ButtonPushed) {
             int curLetterRow = 2;
             int curLetterCol = 1;
@@ -599,7 +612,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 
                 }
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile7Button && tile7ButtonPushed) {
             int curLetterRow = 2;
             int curLetterCol = 1;
@@ -617,7 +631,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                 }
 
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile8Button && !tile8ButtonPushed) {
             int curLetterRow = 3;
             int curLetterCol = 1;
@@ -635,7 +650,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 
                 }
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile8Button && tile8ButtonPushed) {
             int curLetterRow = 3;
             int curLetterCol = 1;
@@ -653,7 +669,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                 }
 
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile9Button && !tile9ButtonPushed) {
             int curLetterRow = 0;
             int curLetterCol = 2;
@@ -671,7 +688,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 
                 }
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile9Button && tile9ButtonPushed) {
             int curLetterRow = 0;
             int curLetterCol = 2;
@@ -689,7 +707,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                 }
 
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile10Button && !tile10ButtonPushed) {
             int curLetterRow = 1;
             int curLetterCol = 2;
@@ -707,7 +726,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 
                 }
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile10Button && tile10ButtonPushed) {
             int curLetterRow = 1;
             int curLetterCol = 2;
@@ -725,7 +745,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                 }
 
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile11Button && !tile11ButtonPushed) {
             int curLetterRow = 2;
             int curLetterCol = 2;
@@ -743,7 +764,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 
                 }
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile11Button && tile11ButtonPushed) {
             int curLetterRow = 2;
             int curLetterCol = 2;
@@ -761,7 +783,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                 }
 
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile12Button && !tile12ButtonPushed) {
             int curLetterRow = 3;
             int curLetterCol = 2;
@@ -779,7 +802,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 
                 }
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile12Button && tile12ButtonPushed) {
             int curLetterRow = 3;
             int curLetterCol = 2;
@@ -797,7 +821,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                 }
 
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile13Button && !tile13ButtonPushed) {
             int curLetterRow = 0;
             int curLetterCol = 3;
@@ -815,7 +840,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 
                 }
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile13Button && tile13ButtonPushed) {
             int curLetterRow = 0;
             int curLetterCol = 3;
@@ -833,7 +859,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                 }
 
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile14Button && !tile14ButtonPushed) {
             int curLetterRow = 1;
             int curLetterCol = 3;
@@ -851,7 +878,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 
                 }
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile14Button && tile14ButtonPushed) {
             int curLetterRow = 1;
             int curLetterCol = 3;
@@ -869,7 +897,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                 }
 
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile15Button && !tile15ButtonPushed) {
             int curLetterRow = 2;
             int curLetterCol = 3;
@@ -887,7 +916,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 
                 }
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile15Button && tile15ButtonPushed) {
             int curLetterRow = 2;
             int curLetterCol = 3;
@@ -905,7 +935,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                 }
 
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile16Button && !tile16ButtonPushed) {
             int curLetterRow = 3;
             int curLetterCol = 3;
@@ -923,7 +954,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 
                 }
             }
-
+            //Checks if the button can be pushed, if it can be, it changes the color of the button,
+            // and adds it to the textview
         } else if (v == tile16Button && tile16ButtonPushed) {
             int curLetterRow = 3;
             int curLetterCol = 3;
@@ -945,6 +977,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 
 
         if (v == submitScoreButton) {
+            //If the submitscore button is pressed, check if the word is legal, then add
             try {
                 if (state.getCurrentWord(playerNum).length() < 3) {
                     Toast.makeText(myActivity, "Entered Word Is Too Short!", Toast.LENGTH_SHORT).show();
@@ -956,14 +989,17 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            //Send a submit action
             submitScore = new BoggleSubmitScoreAction(this, state.getCurrentWord(playerNum));
             game.sendAction(submitScore);
 
             for (int i = 0; i < 20; i++) {
+                //Reset all selected letters
                 selectedLetters[i][0] = 4;
                 selectedLetters[i][1] = 4;
 
             }
+            //Reset all buttons to the normal color
             state.setSelectedLetters(selectedLetters);
             tile1Button.setBackgroundResource(R.mipmap.wood1);
             tile2Button.setBackgroundResource(R.mipmap.wood1);
@@ -982,6 +1018,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             tile15Button.setBackgroundResource(R.mipmap.wood1);
             tile16Button.setBackgroundResource(R.mipmap.wood1);
 
+            //Set all buttons to unpushed
             tile1ButtonPushed = false;
             tile2ButtonPushed = false;
             tile3ButtonPushed = false;
@@ -1007,9 +1044,11 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                     !tile9ButtonPushed && !tile10ButtonPushed && !tile11ButtonPushed && !tile12ButtonPushed &&
                     !tile13ButtonPushed && !tile14ButtonPushed && !tile15ButtonPushed &&
                     !tile16ButtonPushed) {
+                //Only rotate the board if no letters are selected
                 rotateAction = new BoggleRotateAction(this);
                 game.sendAction(rotateAction);
             } else {
+                //Print an error message when letters are selected and user rotates
                 Toast.makeText(myActivity, "Cannot Rotate While Letters Are Selected", Toast.LENGTH_SHORT).show();
             }
         }
