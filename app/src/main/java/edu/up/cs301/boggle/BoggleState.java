@@ -364,7 +364,7 @@ public class BoggleState extends GameState {
      * @return a boolean dictating if it is a legal word
      * @throws IOException
      */
-    public Boolean inDictionary(String word) throws IOException {
+    public boolean inDictionary(String word) throws IOException {
         BufferedReader reader;
         word = word.toLowerCase();
         if(dictionary == null){
@@ -406,7 +406,7 @@ public class BoggleState extends GameState {
      * @param lastLetterRow the row that the last selected letter was in
      * @param lastLetterCol the col that the last selected letter was in
      */
-    public Boolean canRemove(int[][] selectedLetters, int curLetterRow, int curLetterCol,
+    public boolean canRemove(int[][] selectedLetters, int curLetterRow, int curLetterCol,
                              int lastLetterRow, int lastLetterCol) {
 
         int index = getLastLetterIndex(selectedLetters);
@@ -430,7 +430,8 @@ public class BoggleState extends GameState {
      * @param curLetterCol    the col that the new col is in
      * @param letter          letter to add to end of word
      */
-    public void addLetter(String word, int[][] selectedLetters, int curLetterRow, int curLetterCol, String letter) {
+    public void addLetter(String word, int[][] selectedLetters, int curLetterRow, int curLetterCol,
+                          String letter) {
         int index = getLastLetterIndex(selectedLetters);
         selectedLetters[index + 1][0] = curLetterRow;
         selectedLetters[index + 1][1] = curLetterCol;
@@ -449,6 +450,9 @@ public class BoggleState extends GameState {
     }
 
     public String removeFromWord(String currentWord) {
+        if(currentWord == ""){
+            return "";
+        }
         String lastLetter = currentWord.substring(currentWord.length() - 1);
         if (currentWord.length() > 0 && !lastLetter.equals("u")) {
             currentWord = currentWord.substring(0, currentWord.length() - 1);

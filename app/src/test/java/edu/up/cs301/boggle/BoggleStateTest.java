@@ -1,87 +1,97 @@
 package edu.up.cs301.boggle;
 
+import junit.framework.TestCase;
+
 import org.junit.Test;
 
-import java.io.File;
+import java.io.IOException;
 
 import static junit.framework.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-/**
- * JUnit test for testing the functionality of the BoggleState class.
- *
- * @author Michael Waitt
- * @author Charles Rayner
- * @author Jacob Kirby
- */
-public class BoggleStateTest {
 
+/**
+ * Created by Jacob on 4/18/2016.
+ */
+public class BoggleStateTest extends TestCase {
+    BoggleState state = new BoggleState();
     @Test
     public void testWordLength() throws Exception {
-        BoggleState state = new BoggleState();
+
         boolean lengthLongEnough1 = state.wordLength("hello"); //tests a word long enough
         assertTrue(lengthLongEnough1);
         boolean lengthLongEnough2 = state.wordLength(""); //tests no word
         assertFalse(lengthLongEnough2);
         boolean lengthLongEnough3 = state.wordLength("hi"); //tests a short word
         assertFalse(lengthLongEnough3);
+
     }
 
     @Test
-    public void testRemoveLetter() throws Exception {
-        BoggleState state = new BoggleState();
+    public void testCanRemove() throws Exception{
         int[][] selectedLetters = new int[16][2];
         for (int i = 0; i < 16; i++) {
             selectedLetters[i][0] = 4; //4 repersents null
             selectedLetters[i][1] = 4;// 4 repersents null
         }
-        String word1 = ("hello");
-        word1 = state.removeLetter(word1, selectedLetters);
-        assertEquals(word1, "hell");
+        selectedLetters[0][0] = 3;
+        selectedLetters[0][1] = 3;
 
-        String word2 = ("");
-        word2 = state.removeLetter(word2, selectedLetters);
-        assertEquals(word2, "");
+        boolean choice1;
+        choice1 = state.canRemove(selectedLetters,3,3,1,1);
+        assertTrue(choice1);
 
-        String word3 = ("h");
-        word3 = state.removeLetter(word2, selectedLetters);
-        assertEquals(word3, "");
-
-        String word4 = ("hi");
-
-        //represents a letter selected at 0, 0
-        selectedLetters[0][0] = 0;
-        selectedLetters[0][1] = 0;
-
-        //represents a letter selected at 1, 0
-        selectedLetters[1][0] = 1;
-        selectedLetters[1][1] = 0;
-
-        word4 = state.removeLetter(word4, selectedLetters);
-
-        assertEquals(selectedLetters[1][0], 4);
+        boolean choice2;
+        choice2 = state.canRemove(selectedLetters,1,2,1,1);
+        assertFalse(choice2);
     }
 
     @Test
-    public void testInDictionary() throws Exception {
-        BoggleState state = new BoggleState();
-        File file = new File("words.txt");
-        String word1 = "a";
-        String word2 = "dog";
-        String word3 = "agy";
+    public void testAddToWord() throws Exception {
+        state.setCurrentWord("foo",1);
+        String letter = "b";
+        String word = state.addToWord(state.getCurrentWord(1), letter);
+        assertEquals(word, "foob");
 
-        boolean aWord1 = state.inDictionary(word1);
-        assertTrue(aWord1);
-        boolean aWord2 = state.inDictionary(word2);
-        assertTrue(aWord2);
-        boolean aWord3 = state.inDictionary(word3);
-        assertFalse(aWord3);
+        state.setCurrentWord("",1);
+        letter = "a";
+        word = state.addToWord(state.getCurrentWord(1),letter);
+        assertEquals(word, "a");
     }
+    @Test
+    public void testRemoveFromWord() throws Exception {
+        String word1 = "hello";
+        word1 = state.removeFromWord(word1);
+        assertEquals(word1,"hell");
 
+        String word2 = "";
+        word2 = state.removeFromWord(word2);
+        assertEquals(word2,"");
+
+        String word3 = "a";
+        word3 = state.removeFromWord(word3);
+        assertEquals(word3,"");
+
+    }
+    @Test
+    public void testCanAdd() throws Exception {
+        int[][] selectedLetters = new int[16][2];
+        for(int i = 0; i < 16; i++){
+            selectedLetters[i][0] = 4;
+            selectedLetters[i][1] = 4;
+        }
+        boolean trueOrFalse = state.canAdd(selectedLetters, 3, 3, 3, 3);
+        assertEquals(trueOrFalse, true);
+
+        selectedLetters[0][0] = 1;
+        selectedLetters[0][1] = 2;
+
+        trueOrFalse = state.canAdd(selectedLetters, 1, 2, 3, 3);
+        assertEquals(trueOrFalse, false);
+    }
     @Test
     public void testUpdateScore() throws Exception {
-        BoggleState state = new BoggleState();
         String longWord = "pneumonoultramicroscopicsilicovolcanoconiosis";
         int score1 = state.updateScore(longWord);
         assertEquals(score1, 11);
@@ -109,13 +119,40 @@ public class BoggleStateTest {
 
         assertEquals(state.getSelectedLetters()[13][1], 4);
         assertEquals(state.getSelectedLetters()[11][0], 4);
-    }
 
+    }
+    @Test
+    public void testCompUpdateScore() throws Exception {
+        String longWord = "pneumonoultramicroscopicsilicovolcanoconiosis";
+        int score1 = state.updateScore(longWord);
+        assertEquals(score1, 11);
+
+        String littleWord = "hue";
+        int score2 = state.updateScore(littleWord);
+        assertEquals(score2, 1);
+
+        String fourLetter = "goku";
+        int score3 = state.updateScore(fourLetter);
+        assertEquals(score3, 1);
+
+        String fiveLetter = "hello";
+        int score4 = state.updateScore(fiveLetter);
+        assertEquals(score4, 2);
+
+        String sixLetter = "pizzaz";
+        int score5 = state.updateScore(sixLetter);
+        assertEquals(score5, 3);
+
+        String sevenLetter = "jacuzzi";
+        int score6 = state.updateScore(sevenLetter);
+        assertEquals(score6, 5);
+
+    }
     @Test
     public void testRotateBoard() throws Exception {
-        BoggleState state = new BoggleState();
-        String[][] gameBoard = state.getGameBoard();
-        state.rotateBoard(gameBoard);
+
+        String[][] gameBoard = state.getGameBoard(1);
+        state.rotateBoard(gameBoard,1);
         gameBoard[0][0] = "a";
         gameBoard[0][1] = "a";
         gameBoard[0][2] = "a";
@@ -140,86 +177,32 @@ public class BoggleStateTest {
     }
 
     @Test
-    public void testAddToWordBank() throws Exception {
-        BoggleState state = new BoggleState();
-        String longWord = "pneumonoultramicroscopicsilicovolcanoconiosis";
-        state.addToWordBank(longWord);
-        assertEquals(state.getWordBank().get(0), longWord);
-
-        String testString = "test";
-        state.addToWordBank(testString);
-        assertEquals(state.getWordBank().get(1), testString);
-
-        String testString1 = "test";
-        state.addToWordBank(testString1);
-        assertEquals(state.getWordBank().get(2), testString1);
-
-        String testString2 = "test";
-        state.addToWordBank(testString2);
-        assertEquals(state.getWordBank().get(3), testString2);
-
-        assertEquals(state.getWordBank().size(), 4);
-    }
-
-    @Test
     public void testIsCurrentAdjacentToLast() throws Exception {
-        BoggleState state = new BoggleState();
-
         assertEquals(state.isCurrentAdjacentToLast(0, 1, 0, 0), 1);
         assertEquals(state.isCurrentAdjacentToLast(1, 1, 1, 1), 0);
-    }
 
+    }
     @Test
-    public void testAddLetter() throws Exception {
-        BoggleState state = new BoggleState();
+    public void testAddToWordBank() throws Exception {
+        String longWord = "pneumonoultramicroscopicsilicovolcanoconiosis";
+        state.addToWordBank(longWord,1);
+        assertEquals(state.getWordBank(1).get(0), longWord);
 
-        int[][] selectedLetters = new int[16][2];
+        String testString = "test";
+        state.addToWordBank(testString,1);
+        assertEquals(state.getWordBank(1).get(1), testString);
 
-        String word = "foo";
-        String letter = "b";
+        String testString1 = "test";
+        state.addToWordBank(testString1,1);
+        assertEquals(state.getWordBank(1).get(2), testString1);
 
-        //word = state.addLetter(word, selectedLetters, 3, 4, letter);
+        String testString2 = "test";
+        state.addToWordBank(testString2,1);
+        assertEquals(state.getWordBank(1).get(3), testString2);
 
-
-
-        //assertEquals(word, "foob");
-
-        word = "";
-        //letter = "a";
-        String letter2 = BoggleHumanPlayer.tile7ButtonLetter = "a";
-        //word = state.addLetter(word, selectedLetters, 3, 4, letter);
-        word = state.addLetter(word,letter2);
-        int curCol = state.getCurLetterCol(word);
-        int curRow = state.getCurLetterRow(word);
-        assertEquals(curCol,1);
-        assertEquals(2,curRow);
-        assertEquals(word, "a");
+        assertEquals(state.getWordBank(1).size(), 4);
     }
 
-    @Test
-    public void testCanAdd() throws Exception {
-        BoggleState state = new BoggleState();
-
-        int[][] selectedLetters = new int[16][2];
-        boolean trueOrFalse = state.canAdd(selectedLetters, 3, 3, 3, 3);
-        assertEquals(trueOrFalse, false);
 
 
-        selectedLetters[0][0] = 1;
-        selectedLetters[0][1] = 2;
-
-        trueOrFalse = state.canAdd(selectedLetters, 1, 2, 3, 3);
-        assertEquals(trueOrFalse, false);
-    }
-
-    @Test
-    public void testCanRemove() throws Exception {
-        BoggleState state = new BoggleState();
-
-        boolean trueOrFalse = state.canRemove(3, 3, 3, 3);
-        assertEquals(trueOrFalse, true);
-
-        trueOrFalse = state.canRemove(3, 3, 3, 4);
-        assertEquals(trueOrFalse, false);
-    }
 }

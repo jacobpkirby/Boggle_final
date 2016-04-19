@@ -97,7 +97,7 @@ public class BoggleComputerPlayer1 extends GameComputerPlayer implements BoggleP
 
 
     /**
-     * This method recursivally finds all the words on the board and puts them in an list "Found"
+     * This method recursively finds all the words on the board and puts them in an list "Found"
      * @param dict
      * @param board
      * @param row
@@ -136,6 +136,15 @@ public class BoggleComputerPlayer1 extends GameComputerPlayer implements BoggleP
                     copy2.add(found.get(i));
                 }
                 findWords(dict, board, x, y, builtWord, copy, copy2);
+
+                /**
+                 * External Citation
+                 *
+                 * Date: 3 April 2016
+                 * Problem: Didn't know how to find all the words on the game board.
+                 * Resource: Professor Nuxoll
+                 * Solution: Helped us write a recursive method to seach all paths on board
+                 */
             }
         }
 
