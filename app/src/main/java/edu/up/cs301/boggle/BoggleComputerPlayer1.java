@@ -128,7 +128,7 @@ public class BoggleComputerPlayer1 extends GameComputerPlayer implements BoggleP
                 builtWord = currWord + board[x][y];
                 if (found.contains(builtWord)) continue; //if word already exsists in list dont add
                 //if word is over 3 letters and in dictionary add to found list
-                if (builtWord.length() > 2 && dict.contains(builtWord.toLowerCase())) {
+                else if (builtWord.length() > 2 && dict.contains(builtWord.toLowerCase())) {
                     setFound(builtWord);
                 }
                 boolean[][] copy = new boolean[4][4]; // copy of visited tiles
