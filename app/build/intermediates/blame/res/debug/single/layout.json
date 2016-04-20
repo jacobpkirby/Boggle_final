@@ -1,5 +1,17 @@
 [
     {
+        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/layout/game_config_tabhost.xml",
+        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/layout/game_config_tabhost.xml"
+    },
+    {
+        "merged": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/build/intermediates/res/merged/debug/layout/game_config_tabhost.xml",
+        "source": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/src/main/res/layout/game_config_tabhost.xml"
+    },
+    {
+        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/layout/game_local_tab.xml",
+        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/layout/game_local_tab.xml"
+    },
+    {
         "merged": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/build/intermediates/res/merged/debug/layout/boggle_human_player.xml",
         "source": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/src/main/res/layout/boggle_human_player.xml"
     },
@@ -8,23 +20,39 @@
         "source": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/src/main/res/layout/game_local_tab.xml"
     },
     {
-        "merged": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/build/intermediates/res/merged/debug/layout/game_player_list_row.xml",
-        "source": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/src/main/res/layout/game_player_list_row.xml"
+        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/layout/game_config_main.xml",
+        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/layout/game_config_main.xml"
     },
     {
-        "merged": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/build/intermediates/res/merged/debug/layout/game_remote_tab.xml",
-        "source": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/src/main/res/layout/game_remote_tab.xml"
+        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/layout/game_remote_tab.xml",
+        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/layout/game_remote_tab.xml"
     },
     {
         "merged": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/build/intermediates/res/merged/debug/layout/game_config_main.xml",
         "source": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/src/main/res/layout/game_config_main.xml"
     },
     {
+        "merged": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/build/intermediates/res/merged/debug/layout/game_player_list_row.xml",
+        "source": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/src/main/res/layout/game_player_list_row.xml"
+    },
+    {
+        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/layout/game_player_list_row.xml",
+        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/layout/game_player_list_row.xml"
+    },
+    {
+        "merged": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/build/intermediates/res/merged/debug/layout/game_remote_tab.xml",
+        "source": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/src/main/res/layout/game_remote_tab.xml"
+    },
+    {
         "merged": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/build/intermediates/res/merged/debug/layout/game_no_gui.xml",
         "source": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/src/main/res/layout/game_no_gui.xml"
     },
     {
-        "merged": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/build/intermediates/res/merged/debug/layout/game_config_tabhost.xml",
-        "source": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/src/main/res/layout/game_config_tabhost.xml"
+        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/layout/game_no_gui.xml",
+        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/layout/game_no_gui.xml"
+    },
+    {
+        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/layout/boggle_human_player.xml",
+        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/layout/boggle_human_player.xml"
     }
 ]
