@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Boggle1.iml" filepath="$PROJECT_DIR$/Boggle1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Boggle_final.iml" filepath="$PROJECT_DIR$/Boggle_final.iml" />
       <module fileurl="file://$PROJECT_DIR$/Boggle_final3.iml" filepath="$PROJECT_DIR$/Boggle_final3.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

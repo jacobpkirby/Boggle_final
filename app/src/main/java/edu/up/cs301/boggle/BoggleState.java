@@ -130,31 +130,89 @@ public class BoggleState extends GameState {
             }
         }
         //forces some of the tiles to be vowels
-        double randomVowelDouble = Math.random() * 5;
-        int randomVowelInt = (int) randomVowelDouble;
-        if (randomVowelInt == 5) {
-            randomVowelInt = 4;
+        double randomVowelDouble1 = Math.random() * 5;
+        int randomVowelInt1 = (int) randomVowelDouble1;
+        if (randomVowelInt1 == 5) {
+            randomVowelInt1 = 4;
         }
-        String randomVowel = "";
-        if (randomVowelInt == 0) {
-            randomVowel = "A";
-        } else if (randomVowelInt == 1) {
-            randomVowel = "E";
-        } else if (randomVowelInt == 2) {
-            randomVowel = "I";
-        } else if (randomVowelInt == 3) {
-            randomVowel = "O";
-        } else if (randomVowelInt == 4) {
-            randomVowel = "U";
+        String randomVowel1 = "";
+        if (randomVowelInt1 == 0) {
+            randomVowel1 = "A";
+        } else if (randomVowelInt1 == 1) {
+            randomVowel1 = "E";
+        } else if (randomVowelInt1 == 2) {
+            randomVowel1 = "I";
+        } else if (randomVowelInt1 == 3) {
+            randomVowel1 = "O";
+        } else if (randomVowelInt1 == 4) {
+            randomVowel1 = "U";
         }
-        int randomRow = (int) (Math.random() * 4);
-        if (randomRow == 4) {
-            randomRow = 3;
+
+        double randomVowelDouble2 = Math.random() * 5;
+        int randomVowelInt2 = (int) randomVowelDouble2;
+        if (randomVowelInt2 == 5) {
+            randomVowelInt2 = 4;
         }
-        int randomCol = (int) (Math.random() * 4);
-        if (randomCol == 4) {
-            randomCol = 3;
+        String randomVowel2 = "";
+        if (randomVowelInt2 == 0) {
+            randomVowel2 = "A";
+        } else if (randomVowelInt2 == 1) {
+            randomVowel2 = "E";
+        } else if (randomVowelInt2 == 2) {
+            randomVowel2 = "I";
+        } else if (randomVowelInt2 == 3) {
+            randomVowel2 = "O";
+        } else if (randomVowelInt2 == 4) {
+            randomVowel2 = "U";
         }
+
+        double randomVowelDouble3 = Math.random() * 5;
+        int randomVowelInt3 = (int) randomVowelDouble3;
+        if (randomVowelInt3 == 5) {
+            randomVowelInt3 = 4;
+        }
+        String randomVowel3 = "";
+        if (randomVowelInt3 == 0) {
+            randomVowel3 = "A";
+        } else if (randomVowelInt3 == 1) {
+            randomVowel3 = "E";
+        } else if (randomVowelInt3 == 2) {
+            randomVowel3 = "I";
+        } else if (randomVowelInt3 == 3) {
+            randomVowel3 = "O";
+        } else if (randomVowelInt3 == 4) {
+            randomVowel3 = "U";
+        }
+
+
+
+        int randomRow1 = (int) (Math.random() * 4);
+        if (randomRow1 == 4) {
+            randomRow1 = 3;
+        }
+        int randomCol1 = (int) (Math.random() * 4);
+        if (randomCol1 == 4) {
+            randomCol1 = 3;
+        }
+
+        int randomRow2 = (int) (Math.random() * 4);
+        if (randomRow2 == 4) {
+            randomRow2 = 3;
+        }
+        int randomCol2 = (int) (Math.random() * 4);
+        if (randomCol2 == 4) {
+            randomCol2 = 3;
+        }
+
+        int randomRow3 = (int) (Math.random() * 4);
+        if (randomRow3 == 4) {
+            randomRow3 = 3;
+        }
+        int randomCol3 = (int) (Math.random() * 4);
+        if (randomCol3 == 4) {
+            randomCol3 = 3;
+        }
+
         int vowelCount = 0;
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
@@ -164,8 +222,10 @@ public class BoggleState extends GameState {
                 }
             }
         }
-        if (vowelCount == 0) {
-            gameBoard1[randomRow][randomCol] = randomVowel;
+        if (vowelCount < 3) {
+            gameBoard1[randomRow1][randomCol1] = randomVowel1;
+            gameBoard1[randomRow2][randomCol2] = randomVowel2;
+            gameBoard1[randomRow3][randomCol3] = randomVowel3;
         }
         //sets all the selected letters to null at start of game
         for (int k = 0; k < 20; k++) {
