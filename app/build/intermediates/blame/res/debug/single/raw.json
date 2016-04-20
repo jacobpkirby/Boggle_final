@@ -1,30 +1,26 @@
 [
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/raw/goodword.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/raw/goodword.mp3"
+        "merged": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/build/intermediates/res/merged/debug/raw/letterselect.mp3",
+        "source": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/src/main/res/raw/letterselect.mp3"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/raw/badword.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/raw/badword.mp3"
-    },
-    {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/raw/endingsound.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/raw/endingsound.mp3"
+        "merged": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/build/intermediates/res/merged/debug/raw/endingsound.mp3",
+        "source": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/src/main/res/raw/endingsound.mp3"
     },
     {
         "merged": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/build/intermediates/res/merged/debug/raw/words.txt",
         "source": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/src/main/res/raw/words.txt"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/raw/words.txt",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/raw/words.txt"
+        "merged": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/build/intermediates/res/merged/debug/raw/badword.mp3",
+        "source": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/src/main/res/raw/badword.mp3"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/raw/boggletheme.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/raw/boggletheme.mp3"
+        "merged": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/build/intermediates/res/merged/debug/raw/goodword.mp3",
+        "source": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/src/main/res/raw/goodword.mp3"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/raw/letterselect.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/raw/letterselect.mp3"
+        "merged": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/build/intermediates/res/merged/debug/raw/boggletheme.mp3",
+        "source": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/src/main/res/raw/boggletheme.mp3"
     }
 ]
