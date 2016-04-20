@@ -1,14 +1,6 @@
 [
     {
-        "merged": "C:\\Boggle1\\app\\build\\intermediates\\res\\merged\\debug\\menu\\game_main.xml",
-        "source": "C:\\Boggle1\\app\\src\\main\\res\\menu\\game_main.xml"
-    },
-    {
-        "merged": "C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\menu\\game_main.xml",
-        "source": "C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\src\\main\\res\\menu\\game_main.xml"
-    },
-    {
-        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\menu\\game_main.xml",
-        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\menu\\game_main.xml"
+        "merged": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/build/intermediates/res/merged/debug/menu/game_main.xml",
+        "source": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/src/main/res/menu/game_main.xml"
     }
 ]
