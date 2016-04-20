@@ -1,26 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" >
-
-    <item
-        jar="/Users/charlesrayner/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.0/support-annotations-21.0.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e">
-        <dex dex="/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.0_7719739048b7d209a04966b01dfc296825684c30.jar" />
-    </item>
-    <item
-        jar="/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="686344a780033e4ba22b926cd225f8d4941247e6">
-        <dex dex="/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-21.0.0_1fb45530d7a0bd48aee1375349734401d1db82da.jar" />
-    </item>
-    <item
-        jar="/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/jars/libs/internal_impl-21.0.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0">
-        <dex dex="/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.0_44431c33812a131f694366ca759087886c14cb93.jar" />
-    </item>
-
-</items>
+<items version="2" />
