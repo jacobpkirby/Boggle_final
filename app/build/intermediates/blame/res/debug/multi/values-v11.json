@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\values-v11\\values-v11.xml",
+        "outputFile": "C:\\Boggle_final4\\app\\build\\intermediates\\res\\merged\\debug\\values-v11\\values-v11.xml",
         "map": [
             {
                 "to": {
@@ -11,55 +11,7 @@
                     "endOffset": 113
                 },
                 "from": {
-                    "file": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\values-v11\\styles.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 17,
-                        "endColumn": 63,
-                        "endOffset": 76
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/values-v11/values-v11.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 62,
-                    "endOffset": 113
-                },
-                "from": {
-                    "file": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/values-v11/styles.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 17,
-                        "endColumn": 63,
-                        "endOffset": 76
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Boggle_final3\\app\\build\\intermediates\\res\\merged\\debug\\values-v11\\values-v11.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 62,
-                    "endOffset": 113
-                },
-                "from": {
-                    "file": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Boggle_final3\\app\\src\\main\\res\\values-v11\\styles.xml",
+                    "file": "C:\\Boggle_final4\\app\\src\\main\\res\\values-v11\\styles.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -72,7 +24,7 @@
         ]
     },
     {
-        "outputFile": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\values-v11\\values-v11.xml",
+        "outputFile": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\values-v11\\values-v11.xml",
         "map": [
             {
                 "to": {
@@ -83,13 +35,85 @@
                     "endOffset": 113
                 },
                 "from": {
-                    "file": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\src\\main\\res\\values-v11\\styles.xml",
+                    "file": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\src\\main\\res\\values-v11\\styles.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
                         "startOffset": 17,
                         "endColumn": 63,
                         "endOffset": 76
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\values-v11\\values-v11.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 62,
+                    "endOffset": 113
+                },
+                "from": {
+                    "file": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\values-v11\\styles.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 17,
+                        "endColumn": 63,
+                        "endOffset": 76
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\values-v11\\values-v11.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 62,
+                    "endOffset": 113
+                },
+                "from": {
+                    "file": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\values-v11\\styles.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 17,
+                        "endColumn": 63,
+                        "endOffset": 76
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Boggle_final3\\app\\build\\intermediates\\res\\merged\\debug\\values-v11\\values-v11.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 62,
+                    "endOffset": 113
+                },
+                "from": {
+                    "file": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Boggle_final3\\app\\src\\main\\res\\values-v11\\styles.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 19,
+                        "endColumn": 63,
+                        "endOffset": 78
                     }
                 }
             }

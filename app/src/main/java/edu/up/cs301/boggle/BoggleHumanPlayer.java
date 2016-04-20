@@ -1,5 +1,7 @@
 package edu.up.cs301.boggle;
 
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.view.View;
@@ -135,11 +137,19 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             String time = (minutes + ":" + seconds); //set time
             timer.setText(time); //print time
 
-            if (state.getSecondsLeft() >= 179) {
+            if(state.getSecondsLeft()==180) {
+                int currentOrientation = myActivity.getResources().getConfiguration().orientation;
+                if (currentOrientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    myActivity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
+                } else {
+                    myActivity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
+                }
+            }
+
                 themePlayer.setVolume((float) 0.6, (float) 0.6);
                 themePlayer.start();
                 themePlayer.setVolume((float) 0.6, (float) 0.6);
-            }
+
 
             //GAME OVER OPERATIONS
             if (state.getSecondsLeft() == 0) {

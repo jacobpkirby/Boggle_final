@@ -1,5 +1,8 @@
 package edu.up.cs301.boggle;
 
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
+
 import java.util.ArrayList;
 
 import edu.up.cs301.game.GameMainActivity;
@@ -83,6 +86,10 @@ public class BoggleMainActivity extends GameMainActivity {
 		// return the configuration
 		return defaultConfig;
 	}//createDefaultConfig
+
+
+
+
 
 	/**
 	 * create a local game

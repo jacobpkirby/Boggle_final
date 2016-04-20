@@ -1,18 +1,22 @@
 [
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/layout-land/boggle_human_player.xml",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/layout-land/boggle_human_player.xml"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\boggle_human_player.xml",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\layout-land\\boggle_human_player.xml"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Boggle_final3\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\boggle_human_player.xml",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Boggle_final3\\app\\src\\main\\res\\layout-land\\boggle_human_player.xml"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\boggle_human_player.xml",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\src\\main\\res\\layout-land\\boggle_human_player.xml"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\boggle_human_player.xml",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\layout-land\\boggle_human_player.xml"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\boggle_human_player.xml",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\layout-land\\boggle_human_player.xml"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\boggle_human_player.xml",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\src\\main\\res\\layout-land\\boggle_human_player.xml"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Boggle_final3\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\boggle_human_player.xml",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Boggle_final3\\app\\src\\main\\res\\layout-land\\boggle_human_player.xml"
+    },
+    {
+        "merged": "C:\\Boggle_final4\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\boggle_human_player.xml",
+        "source": "C:\\Boggle_final4\\app\\src\\main\\res\\layout-land\\boggle_human_player.xml"
     }
 ]

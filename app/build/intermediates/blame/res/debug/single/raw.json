@@ -1,98 +1,122 @@
 [
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\badword.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\raw\\badword.mp3"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\badword.mp3",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\src\\main\\res\\raw\\badword.mp3"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Boggle_final3\\app\\build\\intermediates\\res\\merged\\debug\\raw\\goodword.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Boggle_final3\\app\\src\\main\\res\\raw\\goodword.mp3"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\goodword.mp3",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\raw\\goodword.mp3"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/raw/endingsound.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/raw/endingsound.mp3"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\endingsound.mp3",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\raw\\endingsound.mp3"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\badword.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\src\\main\\res\\raw\\badword.mp3"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\endingsound.mp3",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\src\\main\\res\\raw\\endingsound.mp3"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Boggle_final3\\app\\build\\intermediates\\res\\merged\\debug\\raw\\boggletheme.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Boggle_final3\\app\\src\\main\\res\\raw\\boggletheme.mp3"
+        "merged": "C:\\Boggle_final4\\app\\build\\intermediates\\res\\merged\\debug\\raw\\badword.mp3",
+        "source": "C:\\Boggle_final4\\app\\src\\main\\res\\raw\\badword.mp3"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/raw/words.txt",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/raw/words.txt"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\letterselect.mp3",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\src\\main\\res\\raw\\letterselect.mp3"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Boggle_final3\\app\\build\\intermediates\\res\\merged\\debug\\raw\\words.txt",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Boggle_final3\\app\\src\\main\\res\\raw\\words.txt"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\boggletheme.mp3",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\raw\\boggletheme.mp3"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\words.txt",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\src\\main\\res\\raw\\words.txt"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Boggle_final3\\app\\build\\intermediates\\res\\merged\\debug\\raw\\goodword.mp3",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Boggle_final3\\app\\src\\main\\res\\raw\\goodword.mp3"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\letterselect.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\src\\main\\res\\raw\\letterselect.mp3"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\words.txt",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\raw\\words.txt"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\boggletheme.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\src\\main\\res\\raw\\boggletheme.mp3"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\words.txt",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\src\\main\\res\\raw\\words.txt"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Boggle_final3\\app\\build\\intermediates\\res\\merged\\debug\\raw\\badword.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Boggle_final3\\app\\src\\main\\res\\raw\\badword.mp3"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\endingsound.mp3",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\raw\\endingsound.mp3"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/raw/letterselect.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/raw/letterselect.mp3"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Boggle_final3\\app\\build\\intermediates\\res\\merged\\debug\\raw\\letterselect.mp3",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Boggle_final3\\app\\src\\main\\res\\raw\\letterselect.mp3"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\goodword.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\src\\main\\res\\raw\\goodword.mp3"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\goodword.mp3",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\raw\\goodword.mp3"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\endingsound.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\raw\\endingsound.mp3"
+        "merged": "C:\\Boggle_final4\\app\\build\\intermediates\\res\\merged\\debug\\raw\\goodword.mp3",
+        "source": "C:\\Boggle_final4\\app\\src\\main\\res\\raw\\goodword.mp3"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Boggle_final3\\app\\build\\intermediates\\res\\merged\\debug\\raw\\letterselect.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Boggle_final3\\app\\src\\main\\res\\raw\\letterselect.mp3"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\letterselect.mp3",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\raw\\letterselect.mp3"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/raw/goodword.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/raw/goodword.mp3"
+        "merged": "C:\\Boggle_final4\\app\\build\\intermediates\\res\\merged\\debug\\raw\\letterselect.mp3",
+        "source": "C:\\Boggle_final4\\app\\src\\main\\res\\raw\\letterselect.mp3"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\endingsound.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\src\\main\\res\\raw\\endingsound.mp3"
+        "merged": "C:\\Boggle_final4\\app\\build\\intermediates\\res\\merged\\debug\\raw\\words.txt",
+        "source": "C:\\Boggle_final4\\app\\src\\main\\res\\raw\\words.txt"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/raw/badword.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/raw/badword.mp3"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\letterselect.mp3",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\raw\\letterselect.mp3"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\words.txt",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\raw\\words.txt"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Boggle_final3\\app\\build\\intermediates\\res\\merged\\debug\\raw\\badword.mp3",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Boggle_final3\\app\\src\\main\\res\\raw\\badword.mp3"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\boggletheme.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\raw\\boggletheme.mp3"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\badword.mp3",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\raw\\badword.mp3"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\letterselect.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\raw\\letterselect.mp3"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Boggle_final3\\app\\build\\intermediates\\res\\merged\\debug\\raw\\words.txt",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Boggle_final3\\app\\src\\main\\res\\raw\\words.txt"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/raw/boggletheme.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/raw/boggletheme.mp3"
+        "merged": "C:\\Boggle_final4\\app\\build\\intermediates\\res\\merged\\debug\\raw\\endingsound.mp3",
+        "source": "C:\\Boggle_final4\\app\\src\\main\\res\\raw\\endingsound.mp3"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\goodword.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\raw\\goodword.mp3"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\boggletheme.mp3",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\raw\\boggletheme.mp3"
     },
     {
-        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Boggle_final3\\app\\build\\intermediates\\res\\merged\\debug\\raw\\endingsound.mp3",
-        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/C:\\Boggle_final3\\app\\src\\main\\res\\raw\\endingsound.mp3"
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\goodword.mp3",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\src\\main\\res\\raw\\goodword.mp3"
+    },
+    {
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Boggle_final3\\app\\build\\intermediates\\res\\merged\\debug\\raw\\endingsound.mp3",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Boggle_final3\\app\\src\\main\\res\\raw\\endingsound.mp3"
+    },
+    {
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Boggle_final3\\app\\build\\intermediates\\res\\merged\\debug\\raw\\boggletheme.mp3",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Boggle_final3\\app\\src\\main\\res\\raw\\boggletheme.mp3"
+    },
+    {
+        "merged": "C:\\Boggle_final4\\app\\build\\intermediates\\res\\merged\\debug\\raw\\boggletheme.mp3",
+        "source": "C:\\Boggle_final4\\app\\src\\main\\res\\raw\\boggletheme.mp3"
+    },
+    {
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\words.txt",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\raw\\words.txt"
+    },
+    {
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\badword.mp3",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\app\\src\\main\\res\\raw\\badword.mp3"
+    },
+    {
+        "merged": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\build\\intermediates\\res\\merged\\debug\\raw\\boggletheme.mp3",
+        "source": "C:\\Users\\charlesrayner\\Documents\\School\\CS301\\HW4\\Boggle_final\\C:\\Users\\Michael\\AndroidStudioProjects\\Boggle_final\\app\\src\\main\\res\\raw\\boggletheme.mp3"
     }
 ]
