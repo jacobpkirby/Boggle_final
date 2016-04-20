@@ -164,6 +164,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                             //adjust the points for each player
                             yourScoreNumberTextView.setText("" + (state.getPlayer1Score() - points));
                             opponentScoreNumberTextView.setText("" + (state.getPlayer2Score() - points));
+                            state.setPlayer1Score((state.getPlayer1Score()-points));
+                            state.setPlayer2Score((state.getPlayer2Score() - points));
                         } else {
                             //Just print a word
                             compWordTextView.append(state.getWordBank(1).get(i) + "\n");
@@ -190,6 +192,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                             //adjust the points for each player
                             yourScoreNumberTextView.setText("" + (state.getPlayer2Score() - points));
                             opponentScoreNumberTextView.setText("" + (state.getPlayer1Score() - points));
+                            state.setPlayer1Score((state.getPlayer1Score()-points));
+                            state.setPlayer2Score((state.getPlayer2Score() - points));
                         } else {
                             //Just print a word
                             compWordTextView.append(state.getWordBank(0).get(i) + "\n");
