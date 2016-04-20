@@ -1,5 +1,6 @@
 package edu.up.cs301.boggle;
 
+import android.media.MediaPlayer;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -40,6 +41,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
     private BoggleState state;
     // the android activity that we are running
     private GameMainActivity myActivity;
+    protected static MediaPlayer themePlayer, badWord, endingSound, goodWord, letterSelect;
 
 
     /**
@@ -335,6 +337,14 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
         compWordTextView = (TextView) activity.findViewById((R.id.compWordTextView));
         timer = (TextView) activity.findViewById(R.id.timerText);
         usedWordsTextView = (TextView) activity.findViewById(R.id.usedWordsTextView);
+
+        //------------*Initialize MediaPlayers*------------//
+        themePlayer = MediaPlayer.create(this, R.raw.boggletheme);
+        badWord = MediaPlayer.create(this, R.raw.badword);
+        endingSound = MediaPlayer.create(this, R.raw.endingsound);
+        goodWord = MediaPlayer.create(this, R.raw.goodword);
+        letterSelect = MediaPlayer.create(this, R.raw.letterselect);
+
     }
 
     /**
