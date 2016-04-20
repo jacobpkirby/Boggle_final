@@ -68,7 +68,7 @@ public class BoggleState extends GameState {
         curLetter = "a";
         curLetterRow = 4; //4 means null
         curLetterCol = 4; // 4 means null
-        secondsLeft = 180; // 3 minutes of play
+        secondsLeft = 30; // 3 minutes of play
 
         //Assigns random letters to the tiles
         Random r1 = new Random();

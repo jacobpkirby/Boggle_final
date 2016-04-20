@@ -138,11 +138,12 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 
             //GAME OVER OPERATIONS
             if (state.getSecondsLeft() == 0) {
-
+                System.out.println(state.getWordBank(0));
                 endingSound.start();
                 themePlayer.pause();
                 compWordTextView.setText("Opponents Words: \n");
                 if (playerNum == 0) {
+
                     //Print the opponent's list of words
                     for (int i = 0; i < state.getWordBank(1).size(); i++) {
                         if (state.getWordBank(0).contains(state.getWordBank(1).get(i))) {
@@ -164,11 +165,13 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                             //adjust the points for each player
                             yourScoreNumberTextView.setText("" + (state.getPlayer1Score() - points));
                             opponentScoreNumberTextView.setText("" + (state.getPlayer2Score() - points));
-                            state.setPlayer1Score((state.getPlayer1Score()-points));
+                            state.setPlayer1Score((state.getPlayer1Score() - points));
                             state.setPlayer2Score((state.getPlayer2Score() - points));
                         } else {
                             //Just print a word
-                            compWordTextView.append(state.getWordBank(1).get(i) + "\n");
+                            if(!compWordTextView.getText().toString().contains(state.getWordBank(0).get(i))) {
+                                compWordTextView.append(state.getWordBank(0).get(i) + "\n");
+                            }
                         }
                     }
                 } else {
@@ -196,7 +199,9 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                             state.setPlayer2Score((state.getPlayer2Score() - points));
                         } else {
                             //Just print a word
-                            compWordTextView.append(state.getWordBank(0).get(i) + "\n");
+                            if(!compWordTextView.getText().toString().contains(state.getWordBank(0).get(i))) {
+                                compWordTextView.append(state.getWordBank(0).get(i) + "\n");
+                            }
                         }
                     }
                 }

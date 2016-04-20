@@ -84,6 +84,7 @@ public class BoggleComputerPlayer1 extends GameComputerPlayer implements BoggleP
             Random rand = new Random();
             int random = rand.nextInt(aiSmartness());
             System.out.println("Random Number: " + random);
+
             if (random == 0) {
                 submitScore = new BoggleComputerSubmitScoreAction(this, word);
                 game.sendAction(submitScore);
