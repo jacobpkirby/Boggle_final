@@ -4,11 +4,23 @@
         "source": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/src/main/res/drawable-hdpi/ic_action_search.png"
     },
     {
-        "merged": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_launcher.png",
-        "source": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/src/main/res/drawable-hdpi/ic_launcher.png"
-    },
-    {
         "merged": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/purple_delete_button.png",
         "source": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/src/main/res/drawable-hdpi/purple_delete_button.png"
+    },
+    {
+        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_action_search.png",
+        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/drawable-hdpi/ic_action_search.png"
+    },
+    {
+        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/purple_delete_button.png",
+        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/drawable-hdpi/purple_delete_button.png"
+    },
+    {
+        "merged": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_launcher.png",
+        "source": "/Users/charlesrayner/Documents/School/CS301/HW4/Boggle_final/app/src/main/res/drawable-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_launcher.png",
+        "source": "/Users/Michael/AndroidStudioProjects/Boggle_final/app/src/main/res/drawable-hdpi/ic_launcher.png"
     }
 ]
