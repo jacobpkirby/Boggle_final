@@ -6,14 +6,20 @@ import edu.up.cs301.game.GamePlayer;
 import edu.up.cs301.game.actionMsg.GameAction;
 
 /**
- * Created by Jacob on 4/12/2016.
+
+ *@author Charles Rayner
+ * @author Michael Waitt
+ * @author Jacob Kirby
+ * Action class for the computer submitting a score
  */
+
 public class BoggleComputerSubmitScoreAction extends GameAction{
     public String word;
+
     /**
-     * constructor for GameAction
-     *
-     * @param player the player who created the action
+     * The constructor
+     * @param player
+     * @param word //word that being passed in for points
      */
     public BoggleComputerSubmitScoreAction(GamePlayer player, String word) {
         super(player);
