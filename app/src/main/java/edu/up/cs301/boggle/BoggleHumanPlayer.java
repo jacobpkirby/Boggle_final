@@ -127,9 +127,9 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (seconds.length() < 2) {
                 seconds = "0" + seconds; //if seconds is single digit, add a 0
             }
-            else if (seconds.equals("10")||seconds.equals("09")||seconds.equals("08")||seconds.equals("07")||
+            else if (minutes.equals("0") && (seconds.equals("10")||seconds.equals("09")||seconds.equals("08")||seconds.equals("07")||
                     seconds.equals("06")|| seconds.equals("05")||seconds.equals("04")||seconds.equals("03")||
-                    seconds.equals("02")||seconds.equals("01")) {
+                    seconds.equals("02")||seconds.equals("01"))) {
                 timer.setTextColor(Color.RED);//Make text red when game is almost over
             }
 
