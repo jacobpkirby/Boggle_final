@@ -356,7 +356,12 @@ public abstract class LocalGame implements Game, Tickable {
 	 *            player requesting the action
 	 */
 	public final void sendAction(GameAction action) {
-		if (myHandler == null) return; // give up if no handler
+		if (myHandler == null){
+			try{Thread.sleep(1000);}catch(InterruptedException ie){}
+			if(myHandler == null){
+				return;
+			}
+		}; // give up if no handler
 
 		// package the action into a message and send it to the handler
 		Message msg = new Message();
