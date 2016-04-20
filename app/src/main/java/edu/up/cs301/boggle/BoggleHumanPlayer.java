@@ -69,9 +69,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
     @Override
     public void receiveInfo(GameInfo info) {
         //if the info is in regard to a bogglestate
-        themePlayer.setVolume((float) 0.6, (float) 0.6);
-        themePlayer.start();
-        themePlayer.setVolume((float) 0.6, (float) 0.6);
+
+
 
         if (info instanceof BoggleState) {
 
@@ -135,6 +134,12 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 
             String time = (minutes + ":" + seconds); //set time
             timer.setText(time); //print time
+
+            if (state.getSecondsLeft() >= 179) {
+                themePlayer.setVolume((float) 0.6, (float) 0.6);
+                themePlayer.start();
+                themePlayer.setVolume((float) 0.6, (float) 0.6);
+            }
 
             //GAME OVER OPERATIONS
             if (state.getSecondsLeft() == 0) {
