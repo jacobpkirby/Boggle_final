@@ -17,6 +17,8 @@ import edu.up.cs301.game.infoMsg.GameInfo;
 /**
  * A GUI of a boggle player
  *
+ *
+ *
  * @author Charles Rayner
  * @author Michael Waitt
  * @author Jacob Kirby

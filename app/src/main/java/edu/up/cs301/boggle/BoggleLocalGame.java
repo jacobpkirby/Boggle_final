@@ -10,6 +10,13 @@ import edu.up.cs301.game.infoMsg.GameState;
 /**
  * A class that represents the sate of the game
  *
+ * As extra to our game we:
+ *              1. added a rotate button to allow the player to rotate the board to see
+ *                 different angles for words
+ *              2. Added a soundtrack to the game and gave sounds when the player sumbits a bad word
+ *              3. Our game is also funtional in both layouts
+ *
+ *
  * @author Charles Rayner
  * @author Michael Waitt
  * @author Jacob Kirby
