@@ -17,6 +17,8 @@ import edu.up.cs301.game.infoMsg.GameInfo;
 /**
  * A GUI of a boggle player
  *
+ *
+ *
  * @author Charles Rayner
  * @author Michael Waitt
  * @author Jacob Kirby
@@ -66,6 +68,10 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
     @Override
     public void receiveInfo(GameInfo info) {
         //if the info is in regard to a bogglestate
+        themePlayer.setVolume((float) 0.2, (float) 0.2);
+        themePlayer.start();
+        themePlayer.setVolume((float) 0.2, (float) 0.2);
+
         if (info instanceof BoggleState) {
 
             chosen = true;
@@ -126,6 +132,9 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 
             //GAME OVER OPERATIONS
             if (state.getSecondsLeft() == 0) {
+
+                endingSound.start();
+                themePlayer.pause();
                 compWordTextView.setText("Opponents Words: \n");
                 if (playerNum == 0) {
                     //Print the opponent's list of words
@@ -339,11 +348,11 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
         usedWordsTextView = (TextView) activity.findViewById(R.id.usedWordsTextView);
 
         //------------*Initialize MediaPlayers*------------//
-        themePlayer = MediaPlayer.create(this, R.raw.boggletheme);
-        badWord = MediaPlayer.create(this, R.raw.badword);
-        endingSound = MediaPlayer.create(this, R.raw.endingsound);
-        goodWord = MediaPlayer.create(this, R.raw.goodword);
-        letterSelect = MediaPlayer.create(this, R.raw.letterselect);
+        themePlayer = MediaPlayer.create(myActivity, R.raw.boggletheme);
+        badWord = MediaPlayer.create(myActivity, R.raw.badword);
+        endingSound = MediaPlayer.create(myActivity, R.raw.endingsound);
+        goodWord = MediaPlayer.create(myActivity, R.raw.goodword);
+        letterSelect = MediaPlayer.create(myActivity, R.raw.letterselect);
 
     }
 
@@ -359,6 +368,9 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
         BoggleDeSelectTileAction deSelect;
         BoggleSubmitScoreAction submitScore;
         BoggleRotateAction rotateAction;
+
+        letterSelect.start();
+
 
         if (this.state == null) {
             return; //return if null, cant deal with that
@@ -986,15 +998,23 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             try {
                 if (state.getCurrentWord(playerNum).length() < 3) {
                     Toast.makeText(myActivity, "Entered Word Is Too Short!", Toast.LENGTH_SHORT).show();
+                    badWord.start();
                 } else if ((state.getCurrentWord(playerNum).length() >= 3) && (!state.inDictionary(state.getCurrentWord(playerNum)))) {
                     Toast.makeText(myActivity, "Entered Word Is Not In Dictionary!", Toast.LENGTH_SHORT).show();
+                    badWord.start();
                 } else if (state.getWordBank(playerNum).contains(state.getCurrentWord(playerNum))) {
                     Toast.makeText(myActivity, "Entered Word Has Been Previously Entered!", Toast.LENGTH_SHORT).show();
+                    badWord.start();
+                }
+                else {
+                    goodWord.start();
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
             //Send a submit action
+
+
             submitScore = new BoggleSubmitScoreAction(this, state.getCurrentWord(playerNum));
             game.sendAction(submitScore);
 
@@ -1058,6 +1078,8 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             }
         }
     }
+
+
 
 }
 

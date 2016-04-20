@@ -4,8 +4,12 @@ import edu.up.cs301.game.GamePlayer;
 import edu.up.cs301.game.actionMsg.GameAction;
 
 /**
- * Created by Jacob on 3/26/2016.
+ *@author Charles Rayner
+ * @author Michael Waitt
+ * @author Jacob Kirby
+ * Action class for when a score is submited
  */
+
 public class BoggleSubmitScoreAction extends GameAction {
     public String currentWord;
     /**
