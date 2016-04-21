@@ -184,9 +184,10 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                             state.setPlayer2Score((state.getPlayer2Score() - points));
                         } else {
                             //Just print a word
-                            //if(!compWordTextView.getText().toString().contains(state.getWordBank(0).get(i))) {
-                                compWordTextView.append(state.getWordBank(0).get(i) + "\n");
-                            //}
+                            if(!compWordTextView.getText().toString().contains(state.getWordBank(1).get(i))) {
+                                compWordTextView.append(state.getWordBank(1).get(i) + "\n");
+
+                            }
                         }
                     }
                 } else {
@@ -214,9 +215,9 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                             state.setPlayer2Score((state.getPlayer2Score() - points));
                         } else {
                             //Just print a word
-                            //if(!compWordTextView.getText().toString().contains(state.getWordBank(0).get(i))) {
-                                compWordTextView.append(state.getWordBank(1).get(i) + "\n");
-                            //}
+                            if(!compWordTextView.getText().toString().contains(state.getWordBank(0).get(i))) {
+                                compWordTextView.append(state.getWordBank(0).get(i) + "\n");
+                            }
                         }
                     }
                 }

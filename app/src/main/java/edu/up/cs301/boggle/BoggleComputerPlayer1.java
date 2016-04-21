@@ -141,7 +141,7 @@ public class BoggleComputerPlayer1 extends GameComputerPlayer implements BoggleP
                 for (int i = 0; i < found.size(); i++) {
                     copy2.add(found.get(i));
                 }
-                findWords(dict, board, x, y, builtWord, copy, copy2);
+                findWords(dict, board, x, y, builtWord, copy,found);
 
                 /**
                  * External Citation
