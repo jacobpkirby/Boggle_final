@@ -40,7 +40,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
     protected Button tile1Button, tile2Button, tile3Button, tile4Button, tile5Button, tile6Button,
             tile7Button, tile8Button, tile9Button, tile10Button, tile11Button, tile12Button, tile13Button,
             tile14Button, tile15Button, tile16Button, rotateButton, submitScoreButton;
-    Boolean chosen = false;
+
     BoggleTimerOutAction gameOver;
     // the most recent game state, as given to us by the CounterLocalGame
     private BoggleState state;
@@ -72,11 +72,15 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
     public void receiveInfo(GameInfo info) {
         //if the info is in regard to a bogglestate
 
-
+        if(tile1ButtonPushed){
+            System.out.println("PUSHED");
+        }
+        else{
+            System.out.println("NOT PUSHED");
+        }
 
         if (info instanceof BoggleState) {
 
-            chosen = true;
             state = (BoggleState) info;
             if (this.playerNum == 0) {
                 //Updates the scores and wordbanks accordingly
@@ -153,7 +157,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 
             //GAME OVER OPERATIONS
             if (state.getSecondsLeft() == 0) {
-                System.out.println(state.getWordBank(0));
+
                 endingSound.start();
                 themePlayer.pause();
                 compWordTextView.setText("Opponents Words: \n");
@@ -407,11 +411,12 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
         }
 
         //Assignments
-        int[][] selectedLetters = state.getSelectedLetters();
-        int lastLetterRow = state.getLastLetterRow(selectedLetters);
-        int lastLetterCol = state.getLastLetterCol(selectedLetters);
+
         String currentWord = state.getCurrentWord(playerNum);
         String[][] gameBoard = state.getGameBoard(playerNum);
+        int[][] selectedLetters = state.getSelectedLetters(playerNum);
+        int lastLetterRow = state.getLastLetterRow(selectedLetters);
+        int lastLetterCol = state.getLastLetterCol(selectedLetters);
 
         //Checks if the button can be pushed, if it can be, it changes the color of the button,
         // and adds it to the textview
@@ -419,25 +424,24 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             int curLetterRow = 0;
             int curLetterCol = 0;
 
-
             boolean canAdd = state.canAdd(selectedLetters, curLetterRow, curLetterCol, lastLetterRow, lastLetterCol);
             state.setCurLetter(state.getCurLetterFromBoard(curLetterRow, curLetterCol, gameBoard));
 
             if (canAdd) {
                 tile1Button.setBackgroundColor(0x86090404);
                 tile1ButtonPushed = true;
-                if (chosen) {
-                    chosen = false;
+
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
                     letterSelect.start();
                     state.addLetter(currentWord, selectedLetters, curLetterRow, curLetterCol, gameBoard[curLetterRow][curLetterCol]);
-                }
+
 
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
             // and adds it to the textview
         } else if (v == tile1Button && tile1ButtonPushed) {
+            System.out.println("HERE");
             int curLetterRow = 0;
             int curLetterCol = 0;
 
@@ -445,15 +449,16 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             state.setCurLetter(state.getCurLetterFromBoard(curLetterRow, curLetterCol, gameBoard));
 
             if (canRemove) {
+                System.out.println("CAN REMOVE");
                 tile1Button.setBackgroundResource(R.mipmap.wood1);
                 tile1ButtonPushed = false;
-                if (chosen) {
-                    chosen = false;
+
+
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
                     letterSelect.start();
                     state.removeLetter(currentWord, selectedLetters);
-                }
+
 
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
@@ -468,13 +473,12 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile2Button.setBackgroundColor(0x86090404);
                 tile2ButtonPushed = true;
-                if (chosen) {
-                    chosen = false;
+
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
                     letterSelect.start();
                     state.addLetter(currentWord, selectedLetters, curLetterRow, curLetterCol, gameBoard[curLetterRow][curLetterCol]);
-                }
+
 
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
@@ -489,13 +493,12 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile2Button.setBackgroundResource(R.mipmap.wood1);
                 tile2ButtonPushed = false;
-                if (chosen) {
-                    chosen = false;
+
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
                     letterSelect.start();
                     state.removeLetter(currentWord, selectedLetters);
-                }
+
 
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
@@ -510,13 +513,13 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile3Button.setBackgroundColor(0x86090404);
                 tile3ButtonPushed = true;
-                if (chosen) {
-                    chosen = false;
+
+
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
                     letterSelect.start();
                     state.addLetter(currentWord, selectedLetters, curLetterRow, curLetterCol, gameBoard[curLetterRow][curLetterCol]);
-                }
+
 
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
@@ -531,13 +534,13 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile3Button.setBackgroundResource(R.mipmap.wood1);
                 tile3ButtonPushed = false;
-                if (chosen) {
-                    chosen = false;
+
+
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
                     letterSelect.start();
                     state.removeLetter(currentWord, selectedLetters);
-                }
+
 
             }
 
@@ -553,13 +556,11 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile4Button.setBackgroundColor(0x86090404);
                 tile4ButtonPushed = true;
-                if (chosen) {
-                    chosen = false;
+
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
                     letterSelect.start();
                     state.addLetter(currentWord, selectedLetters, curLetterRow, curLetterCol, gameBoard[curLetterRow][curLetterCol]);
-                }
 
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
@@ -574,13 +575,13 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile4Button.setBackgroundResource(R.mipmap.wood1);
                 tile4ButtonPushed = false;
-                if (chosen) {
-                    chosen = false;
+
+
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
                     letterSelect.start();
                     state.removeLetter(currentWord, selectedLetters);
-                }
+
 
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
@@ -595,14 +596,12 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile5Button.setBackgroundColor(0x86090404);
                 tile5ButtonPushed = true;
-                if (chosen) {
-                    chosen = false;
+
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
                     letterSelect.start();
                     state.addLetter(currentWord, selectedLetters, curLetterRow, curLetterCol, gameBoard[curLetterRow][curLetterCol]);
 
-                }
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
             // and adds it to the textview
@@ -616,13 +615,12 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile5Button.setBackgroundResource(R.mipmap.wood1);
                 tile5ButtonPushed = false;
-                if (chosen) {
-                    chosen = false;
+
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
                     letterSelect.start();
                     state.removeLetter(currentWord, selectedLetters);
-                }
+
 
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
@@ -655,13 +653,12 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile6Button.setBackgroundResource(R.mipmap.wood1);
                 tile6ButtonPushed = false;
-                if (chosen) {
-                    chosen = false;
+
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
                     letterSelect.start();
                     state.removeLetter(currentWord, selectedLetters);
-                }
+
 
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
@@ -676,14 +673,13 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile7Button.setBackgroundColor(0x86090404);
                 tile7ButtonPushed = true;
-                if (chosen) {
-                    chosen = false;
+
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
                     letterSelect.start();
                     state.addLetter(currentWord, selectedLetters, curLetterRow, curLetterCol, gameBoard[curLetterRow][curLetterCol]);
 
-                }
+
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
             // and adds it to the textview
@@ -697,13 +693,12 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile7Button.setBackgroundResource(R.mipmap.wood1);
                 tile7ButtonPushed = false;
-                if (chosen) {
-                    chosen = false;
+
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
                     letterSelect.start();
                     state.removeLetter(currentWord, selectedLetters);
-                }
+
 
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
@@ -718,14 +713,12 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile8Button.setBackgroundColor(0x86090404);
                 tile8ButtonPushed = true;
-                if (chosen) {
-                    chosen = false;
+
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
                     letterSelect.start();
                     state.addLetter(currentWord, selectedLetters, curLetterRow, curLetterCol, gameBoard[curLetterRow][curLetterCol]);
 
-                }
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
             // and adds it to the textview
@@ -739,13 +732,12 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile8Button.setBackgroundResource(R.mipmap.wood1);
                 tile8ButtonPushed = false;
-                if (chosen) {
-                    chosen = false;
+
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
                     letterSelect.start();
                     state.removeLetter(currentWord, selectedLetters);
-                }
+
 
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
@@ -760,14 +752,12 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile9Button.setBackgroundColor(0x86090404);
                 tile9ButtonPushed = true;
-                if (chosen) {
-                    chosen = false;
+
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
                     letterSelect.start();
                     state.addLetter(currentWord, selectedLetters, curLetterRow, curLetterCol, gameBoard[curLetterRow][curLetterCol]);
 
-                }
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
             // and adds it to the textview
@@ -781,13 +771,12 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile9Button.setBackgroundResource(R.mipmap.wood1);
                 tile9ButtonPushed = false;
-                if (chosen) {
-                    chosen = false;
+
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
                     letterSelect.start();
                     state.removeLetter(currentWord, selectedLetters);
-                }
+
 
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
@@ -802,14 +791,12 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile10Button.setBackgroundColor(0x86090404);
                 tile10ButtonPushed = true;
-                if (chosen) {
-                    chosen = false;
+
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
                     letterSelect.start();
                     state.addLetter(currentWord, selectedLetters, curLetterRow, curLetterCol, gameBoard[curLetterRow][curLetterCol]);
 
-                }
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
             // and adds it to the textview
@@ -823,13 +810,11 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile10Button.setBackgroundResource(R.mipmap.wood1);
                 tile10ButtonPushed = false;
-                if (chosen) {
-                    chosen = false;
+
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
                     letterSelect.start();
                     state.removeLetter(currentWord, selectedLetters);
-                }
 
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
@@ -844,14 +829,12 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile11Button.setBackgroundColor(0x86090404);
                 tile11ButtonPushed = true;
-                if (chosen) {
-                    chosen = false;
+
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
                     letterSelect.start();
                     state.addLetter(currentWord, selectedLetters, curLetterRow, curLetterCol, gameBoard[curLetterRow][curLetterCol]);
 
-                }
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
             // and adds it to the textview
@@ -865,13 +848,11 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile11Button.setBackgroundResource(R.mipmap.wood1);
                 tile11ButtonPushed = false;
-                if (chosen) {
-                    chosen = false;
+
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
                     letterSelect.start();
                     state.removeLetter(currentWord, selectedLetters);
-                }
 
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
@@ -886,14 +867,12 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile12Button.setBackgroundColor(0x86090404);
                 tile12ButtonPushed = true;
-                if (chosen) {
-                    chosen = false;
+
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
                     letterSelect.start();
                     state.addLetter(currentWord, selectedLetters, curLetterRow, curLetterCol, gameBoard[curLetterRow][curLetterCol]);
 
-                }
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
             // and adds it to the textview
@@ -907,13 +886,11 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile12Button.setBackgroundResource(R.mipmap.wood1);
                 tile12ButtonPushed = false;
-                if (chosen) {
-                    chosen = false;
+
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
                     letterSelect.start();
                     state.removeLetter(currentWord, selectedLetters);
-                }
 
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
@@ -928,14 +905,12 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile13Button.setBackgroundColor(0x86090404);
                 tile13ButtonPushed = true;
-                if (chosen) {
-                    chosen = false;
+
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
                     letterSelect.start();
                     state.addLetter(currentWord, selectedLetters, curLetterRow, curLetterCol, gameBoard[curLetterRow][curLetterCol]);
 
-                }
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
             // and adds it to the textview
@@ -949,13 +924,11 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile13Button.setBackgroundResource(R.mipmap.wood1);
                 tile13ButtonPushed = false;
-                if (chosen) {
-                    chosen = false;
+
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
                     letterSelect.start();
                     state.removeLetter(currentWord, selectedLetters);
-                }
 
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
@@ -970,14 +943,12 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile14Button.setBackgroundColor(0x86090404);
                 tile14ButtonPushed = true;
-                if (chosen) {
-                    chosen = false;
+
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
                     letterSelect.start();
                     state.addLetter(currentWord, selectedLetters, curLetterRow, curLetterCol, gameBoard[curLetterRow][curLetterCol]);
 
-                }
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
             // and adds it to the textview
@@ -991,13 +962,11 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile14Button.setBackgroundResource(R.mipmap.wood1);
                 tile14ButtonPushed = false;
-                if (chosen) {
-                    chosen = false;
+
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
                     letterSelect.start();
                     state.removeLetter(currentWord, selectedLetters);
-                }
 
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
@@ -1012,14 +981,12 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile15Button.setBackgroundColor(0x86090404);
                 tile15ButtonPushed = true;
-                if (chosen) {
-                    chosen = false;
+
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
                     letterSelect.start();
                     state.addLetter(currentWord, selectedLetters, curLetterRow, curLetterCol, gameBoard[curLetterRow][curLetterCol]);
 
-                }
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
             // and adds it to the textview
@@ -1033,13 +1000,11 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile15Button.setBackgroundResource(R.mipmap.wood1);
                 tile15ButtonPushed = false;
-                if (chosen) {
-                    chosen = false;
+
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
                     letterSelect.start();
                     state.removeLetter(currentWord, selectedLetters);
-                }
 
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
@@ -1054,14 +1019,12 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canAdd) {
                 tile16Button.setBackgroundColor(0x86090404);
                 tile16ButtonPushed = true;
-                if (chosen) {
-                    chosen = false;
+
                     select = new BoggleSelectTileAction(this, curLetterRow, curLetterCol);
                     game.sendAction(select);
                     letterSelect.start();
                     state.addLetter(currentWord, selectedLetters, curLetterRow, curLetterCol, gameBoard[curLetterRow][curLetterCol]);
 
-                }
             }
             //Checks if the button can be pushed, if it can be, it changes the color of the button,
             // and adds it to the textview
@@ -1075,13 +1038,11 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
             if (canRemove) {
                 tile16Button.setBackgroundResource(R.mipmap.wood1);
                 tile16ButtonPushed = false;
-                if (chosen) {
-                    chosen = false;
+
                     deSelect = new BoggleDeSelectTileAction(this);
                     game.sendAction(deSelect);
                     letterSelect.start();
                     state.removeLetter(currentWord, selectedLetters);
-                }
 
             }
         }
@@ -1119,7 +1080,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 
             }
             //Reset all buttons to the normal color
-            state.setSelectedLetters(selectedLetters);
+            state.setSelectedLetters(selectedLetters,playerNum);
             tile1Button.setBackgroundResource(R.mipmap.wood1);
             tile2Button.setBackgroundResource(R.mipmap.wood1);
             tile3Button.setBackgroundResource(R.mipmap.wood1);

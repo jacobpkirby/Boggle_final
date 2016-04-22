@@ -37,7 +37,10 @@ public class BoggleState extends GameState {
     private String[][] gameBoard1 = new String[4][4]; //array of all the letters on the board
     private String[][] gameBoard2 = new String[4][4]; //array of all the letters on the board
     private boolean[][] visited = new boolean[4][4];//tells weather a tile has been searched already
-    private int[][] selectedLetters = new int[20][2]; //list of selected letters positions
+   //BUG
+    private int[][] selectedLetters1 = new int[20][2]; //list of selected letters positions
+    private int[][] selectedLetters2 = new int[20][2]; //list of selected letters positions
+
     private ArrayList<String> compUsedWords = new ArrayList<String>(); //list of all words computer uses in game
     private String curLetter; //the current letter that is selected
     private int curLetterRow; //current row of letter selected
@@ -229,8 +232,11 @@ public class BoggleState extends GameState {
         }
         //sets all the selected letters to null at start of game
         for (int k = 0; k < 20; k++) {
-            selectedLetters[k][0] = 4;
-            selectedLetters[k][1] = 4;
+           //BUG
+            selectedLetters1[k][0] = 4;
+            selectedLetters1[k][1] = 4;
+            selectedLetters2[k][0] = 4;
+            selectedLetters2[k][1] = 4;
         }
         wordBank1 = new ArrayList<String>();  // human used words
         wordBank2 = new ArrayList<String>();
@@ -276,7 +282,8 @@ public class BoggleState extends GameState {
         gameBoard1 = Arrays.copyOf(state.gameBoard1, state.gameBoard1.length);
         gameBoard2 = Arrays.copyOf(state.gameBoard2, state.gameBoard2.length);
         visited = Arrays.copyOf(state.visited, state.gameBoard1.length);
-        selectedLetters = Arrays.copyOf(state.selectedLetters, state.selectedLetters.length);
+        selectedLetters1 = Arrays.copyOf(state.selectedLetters1, state.selectedLetters1.length);
+        selectedLetters2 = Arrays.copyOf(state.selectedLetters2, state.selectedLetters2.length);
         //compPrevWord = state.compPrevWord;
         //NETWORK
         this.currentWord = new String[2];
@@ -377,12 +384,22 @@ public class BoggleState extends GameState {
         this.gameOver = gameOver;
     }
 
-    public int[][] getSelectedLetters() {
-        return Arrays.copyOf(selectedLetters, selectedLetters.length);
+    public int[][] getSelectedLetters(int playerNum) {
+        if(playerNum == 0) {
+            return Arrays.copyOf(selectedLetters1, selectedLetters1.length);
+        }else{
+            return Arrays.copyOf(selectedLetters2, selectedLetters2.length);
+        }
     }
 
-    public void setSelectedLetters(int[][] selectedLetters) {
-        this.selectedLetters = Arrays.copyOf(selectedLetters, selectedLetters.length);
+    public void setSelectedLetters(int[][] selectedLetters, int playerNum) {
+        if(playerNum == 0){
+            this.selectedLetters1 = Arrays.copyOf(selectedLetters1, selectedLetters1.length);
+        }
+        else{
+            this.selectedLetters2 = Arrays.copyOf(selectedLetters2, selectedLetters2.length);
+        }
+
     }
 
     public int getSecondsLeft() {
@@ -592,6 +609,8 @@ public class BoggleState extends GameState {
      */
     public Boolean canAdd(int[][] selectedLetters, int curLetterRow, int curLetterCol,
                           int lastLetterRow, int lastLetterCol) {
+        System.out.println("LAST SELECTED LETTER: " + getLastLetterRow(selectedLetters));
+
 
         if (getLastLetterRow(selectedLetters) == 4) {
             return true;
@@ -618,7 +637,7 @@ public class BoggleState extends GameState {
      *
      * @param word the word the user has submitted
      */
-    public int updateScore(String word) {
+    public int updateScore(String word, int playerNum) {
         int score = 0;
 
         //Check to see how long the word is
@@ -638,8 +657,14 @@ public class BoggleState extends GameState {
 
         //resets the values of the selectedLetters array
         for (int i = 0; i < 20; i++) {
-            selectedLetters[i][0] = 4;
-            selectedLetters[i][1] = 4;
+            if(playerNum == 0) {
+                selectedLetters1[i][0] = 4;
+                selectedLetters1[i][1] = 4;
+            }else{
+                selectedLetters2[i][0] = 4;
+                selectedLetters2[i][1] = 4;
+            }
+
         }
         return score;
     }

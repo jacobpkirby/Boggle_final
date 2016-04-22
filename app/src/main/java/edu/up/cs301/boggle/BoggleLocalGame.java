@@ -55,7 +55,7 @@ public class BoggleLocalGame extends LocalGame implements BoggleGame {
     protected String checkIfGameOver() {
 
 
-        System.out.println("CHECKING IF GAME OVER" + state.getGameOver());
+
         if (state.getGameOver() == 1) {
             int winner = state.getWinner();
             String winTxt = "";
@@ -102,19 +102,23 @@ public class BoggleLocalGame extends LocalGame implements BoggleGame {
             int curCol = BSTA.curLetterCol;
             String currentWord = state.getCurrentWord(playerIdx); //pre exsisting word
             //array of all words choosen already and their positions
-            int[][] selectedLetters = state.getSelectedLetters();
+            int[][] selectedLetters = state.getSelectedLetters(playerIdx);
             String[][] gameBoard = state.getGameBoard(playerIdx);
             //adds letter from tile to exsisitng word
             currentWord = state.addToWord(currentWord, gameBoard[curRow][curCol]);
             state.setCurrentWord(currentWord, playerIdx);
-            state.setSelectedLetters(selectedLetters);
+            state.setSelectedLetters(selectedLetters,playerIdx);
+
             return true;
         } else if (action instanceof BoggleDeSelectTileAction) {
             String currentWord = state.getCurrentWord(playerIdx);
-            int[][] selectedLetters = state.getSelectedLetters();
+            int[][] selectedLetters = state.getSelectedLetters(playerIdx);
             currentWord = state.removeFromWord(currentWord);
             state.setCurrentWord(currentWord, playerIdx);
-            state.setSelectedLetters(selectedLetters);
+            state.setSelectedLetters(selectedLetters,playerIdx);
+
+
+
             return true;
 
         } else if (action instanceof BoggleSubmitScoreAction) {
@@ -126,7 +130,7 @@ public class BoggleLocalGame extends LocalGame implements BoggleGame {
                     state.setCurrentWord("", playerIdx);
                     return false;
                 } else {
-                    int score = state.updateScore(word);
+                    int score = state.updateScore(word,playerIdx);
                     if (playerIdx == 0) {
                         state.setPlayer1Score(state.getPlayer1Score() + score);
                     } else {
@@ -134,9 +138,10 @@ public class BoggleLocalGame extends LocalGame implements BoggleGame {
                     }
                     state.addToWordBank(word, playerIdx);
                     state.setCurrentWord("", playerIdx);
-                    int[][] selectedLetters = state.getSelectedLetters();
+                    int[][] selectedLetters = state.getSelectedLetters(playerIdx);
 
-                    state.setSelectedLetters(selectedLetters);
+                    state.setSelectedLetters(selectedLetters, playerIdx);
+
                     return true;
                 }
             }
