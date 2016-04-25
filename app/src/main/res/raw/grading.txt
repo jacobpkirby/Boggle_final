@@ -1,0 +1,12 @@
+Functionality that you think deserves extra points:
+	1. Our Game has a rotate board button that allows the board to be rotated 90 degrees to allow users to see different angles for words. Most boggle games don't
+		have this feature which we think makes our game special
+	2. We have an original soundtrack that plays in our game along with other sounds such as a noise for misspelled words.
+	3. Our game works in both layouts but the layout must be chosen before the game starts. 
+
+Bugs that you are aware of and why you were unable to fix them.
+	The only bug we know of is that sometimes the game does not display every word you do print out. We do not know why this is happening because the word is present
+	int the array that is supposed to be printed. Our guess is that the user might type in the words to fast for the game to repsond. This happens rarely tho.
+
+Notes on how to play that may not be obvious:
+	Select tiles that are adjacent to each other or diagonal and try to spell out more words then the computer does. 
