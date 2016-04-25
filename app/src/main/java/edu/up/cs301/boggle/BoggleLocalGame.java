@@ -14,7 +14,8 @@ import edu.up.cs301.game.infoMsg.GameState;
  *              1. added a rotate button to allow the player to rotate the board to see
  *                 different angles for words
  *              2. Added a soundtrack to the game and gave sounds when the player sumbits a bad word
- *              3. Our game is also funtional in both layouts
+ *              3. !!IMPORTANT NOTE!! Our game is functional in both layouts but the user must decide
+ *                     the layout before the game starts. otherwise it will lock.
  *
  *
  * @author Charles Rayner
