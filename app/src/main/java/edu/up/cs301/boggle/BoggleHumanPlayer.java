@@ -72,13 +72,6 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
     public void receiveInfo(GameInfo info) {
         //if the info is in regard to a bogglestate
 
-        if(tile1ButtonPushed){
-            System.out.println("PUSHED");
-        }
-        else{
-            System.out.println("NOT PUSHED");
-        }
-
         if (info instanceof BoggleState) {
 
             state = (BoggleState) info;
@@ -87,6 +80,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                 yourScoreNumberTextView.setText("" + state.getPlayer1Score());
                 opponentScoreNumberTextView.setText("" + state.getPlayer2Score());
                 letterDisplayTextView.setText("" + state.getCurrentWord(playerNum));
+
             } else if (this.playerNum == 1) {
                 //Updates the scores and wordbanks accordingly
                 yourScoreNumberTextView.setText("" + state.getPlayer2Score());
@@ -96,12 +90,14 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
 
 
             if (state.getWordBank(playerNum) != null) {
+
                 for (int i = 0; i < state.getWordBank(playerNum).size(); i++) {
                     if (state.getWordBank(playerNum).get(i) != null &&
                             !usedWordsTextView.getText().toString().contains(state.getWordBank(playerNum).get(i))) {
                         //prints the word bank into the scrollview
                         usedWordsTextView.setText("" + state.getWordBank(playerNum).get(i) +
                                 "\n" + usedWordsTextView.getText());
+
                     }
                 }
             }
@@ -250,9 +246,7 @@ public class BoggleHumanPlayer extends GameHumanPlayer implements BogglePlayer, 
                 game.sendAction(gameOver);
 
             }
-
         }
-
     }
 
     /**
